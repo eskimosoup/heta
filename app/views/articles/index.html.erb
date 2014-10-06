@@ -1,0 +1,38 @@
+<div class="title-spacer"></div>
+
+<div class="title-area">
+  <div class="row">
+    <div class="large-12 columns focus-title-area">
+      <div class="heading-container">
+        <h1>Latest News</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="articles">
+
+  <div class="row">
+    <% @articles.each do |article| %>
+      <div class="large-2 columns article-date">
+        <%= l article.date %>
+      </div>
+      <div class="large-10 columns article-container">
+        <div class="row">
+          <div class="large-9 columns">
+            <h2><%= link_to article.headline, article %></h2>
+            <p><%= article.summary %></p>
+            <%= link_to "Read more", article, :class => "read-more" %>
+          </div>
+
+          <div class="large-3 columns">
+            <% unless article.image.blank? %>
+              <%= image_tag article.image.small %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <%= paginate @articles %>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<div class="title-spacer"></div>
+
+<div class="title-area">
+  <div class="row">
+    <div class="large-12 columns focus-title-area">
+      <div class="heading-container">
+        <h1>Apprentices Available</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-12 columns">
+    <div class="letters-navigation">
+      <%= link_to "Show all", available_apprentices_path %>
+      <% @locations.each do |location| %>
+        <%= link_to(location.name, available_apprentices_path(:location => location)) %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<% @available_apprentices.each_slice(4) do |slice| %>
+  <div class="row">
+    <% slice.each do |apprentice| %>
+      <div class="large-3 columns available-apprentice">
+        <% if apprentice.image.blank? %>
+          <img src="http://placehold.it/350x350">
+        <% else %>
+          <%= image_tag apprentice.image.index, :class => "image-border" %>
+        <% end %>
+        <h2>Name: <%= apprentice.name %></h2>
+        <h3>Trade: <%= apprentice.trade %></h3>
+        <h3>Location: <%= apprentice.training_location.name %></h3>
+      </div>
+
+    <% end %>
+  </div>
+<% end %>

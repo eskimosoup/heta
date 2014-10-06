@@ -1,0 +1,66 @@
+<%= form_for @contact do |f| %>
+
+  <% if f.object.errors.any? %>
+    <div class="row">
+      <div class="large-12 columns error-messages">
+        <h3>Sorry, there appears to be a problem.</h3>
+        <ul class="error_messages">
+          <% for message in f.object.errors.full_messages %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+
+  <% end %>
+
+<div class="row">
+  <div class="large-6 columns">
+    <div class="field">
+      <%= f.label :firstname, raw("First Name *")%><br />
+      <%= f.text_field :firstname, :placeholder => "Your first name" %>
+    </div>
+
+
+
+    <div class="field">
+      <%= f.label :lastname, raw("Last Name *") %><br />
+      <%= f.text_field :lastname, :placeholder => "Your last name" %>
+    </div>
+
+
+
+    <div class="field">
+      <%= f.label :email, raw("Email Address *") %><br />
+      <%= f.text_field :email, :placeholder => "Your email address" %>
+    </div>
+
+
+
+    <div class="field">
+      <%= f.label :subject, raw("Subject *") %><br />
+      <%= f.text_field :subject, :placeholder => "Your reason for contacting us" %>
+    </div>
+    
+    
+    <div class="field">
+      <%= f.label :area, raw("Site  *") %><br />
+      <%= f.select :area, ['Hull', 'Stallingborough', 'Scunthorpe'] %>
+    </div>
+  </div>
+
+  <div class="large-6 columns">
+    <div class="field">
+      <%= f.label :message, raw("Message *") %><br />
+      <%= f.text_area :message, :placeholder => "Your message", :rows => "30" %>
+    </div>
+
+
+
+    <div class="actions">
+      <%= f.submit "Submit" %>
+    </div>
+  </div>
+</div>
+
+<% end %>

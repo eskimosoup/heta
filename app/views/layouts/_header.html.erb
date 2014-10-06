@@ -1,0 +1,74 @@
+<div id="header">
+
+<div class="mobile-menu hide-for-medium-up">
+
+</div>
+
+<ul class="mobile-menu-list hidden hide-for-medium-up">
+  <div id="header-search-social">
+  <%= form_tag courses_path, :id => "search-form-mobile mobile-search", :method => 'get' do %>
+    <%= text_field_tag :search, params[:search], :placeholder => "Search for courses" %>
+    <%= submit_tag "", :class => "header-search-button" %>
+  <% end %>
+  </div>
+
+
+  <% unless @navigation.blank? %>
+    <% @navigation.each_with_index do |branch, i| %>
+      <li>
+        <% if branch.children? %>
+          <%= link_to branch.name, "##{i}", :class => (@current_branch and @current_branch == branch ? "children active" : "children") %>
+          <div class="mobile-nav-children-arrow"><%= image_tag 'nav_arrow.png', alt: "" %></div>
+            <ul class="mobile_children_nav closed" id="<%= i %>">
+              <li><%= link_to branch.name, branch.destination %></li>
+              <% branch.children.each do |child| %>
+                <li><%= link_to child.name, child.destination %></li>
+              <% end %>
+            </ul>
+        <% else %>
+          <%= link_to branch.name, branch.destination, :class => (@current_branch and @current_branch == branch ? "active" : "") %>
+        <% end %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<div class="row hide-for-small">
+  <div id="header-telephone" class="large-9 columns">
+    Hull: <span><%= SITE_SETTINGS['Telephone Hull'] %></span> <span class="divider">|</span> Grimsby: <span><%= SITE_SETTINGS['Telephone Grimsby'] %></span> <span class="divider">|</span> Scunthorpe: <span><%= SITE_SETTINGS['Telephone Scunthorpe'] %></span>
+  </div>
+  
+  <div id="header-internal-links" class="large-3 columns">
+    <%= link_to 'Moodle', 'https://moodle.heta.co.uk/login/index.php', target: "_blank" %> <span class="divider">|</span>
+    
+    <%= link_to 'SkillsBuilder', 'http://learn.forskills.co.uk/institution/heta/', target: "_blank" %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-4 columns logo"><%= link_to image_tag("heta_logo.png"), root_path %></div>
+
+  <div class="large-8 columns hide-for-small">
+    <div class="row">
+      <div id="header-search-social" class="large-12 columns">
+        <% unless SITE_SETTINGS['Twitter'].blank? %>
+          <%= link_to image_tag("twitter.png"), SITE_SETTINGS['Twitter'] %>
+        <% end %>
+        
+        <% unless SITE_SETTINGS['Facebook'].blank? %>
+          <%= link_to image_tag("facebook.png"), SITE_SETTINGS['Facebook'] %>
+        <% end %>
+
+        <%= form_tag courses_path, :id => "search-form", :method => 'get' do %><%= submit_tag "", :class => "header-search-button" %>
+          <%= text_field_tag :search, params[:search], :placeholder => "Search for courses" %>
+
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+

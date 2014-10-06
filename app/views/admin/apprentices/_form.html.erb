@@ -1,0 +1,63 @@
+<%= form_for([:admin, @apprentice]) do |f| %>
+
+  <%= f.error_messages %>
+
+  <%= field_set_tag 'Basic' do -%>
+    
+    <div class="field">
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </div>
+    
+    <div class="field">
+      <%= f.label :company_id %><br />
+      <%= f.select :company_id, Company.all.map{|x| [x.name, x.id]}, { include_blank: true } %>
+    </div>
+
+    <div class="field">
+      <%= f.label :job_title %><br />
+      <%= f.text_field :job_title %>
+    </div>
+
+    <div class="field">
+      <%= f.label :year_attended %><br />
+      <%= f.date_select :year_attended, :discard_day => true, :discard_month => true, :start_year => Date.today.year, :end_year => Date.today.year-45, :include_blank => true %>
+    </div>
+
+    <div class="field">
+      <%= f.label "Apprentice Pathway" %><br />
+      <%= f.select :apprentice_pathway_id, ApprenticePathway.all.map{|x| [x.title, x.id]}, :include_blank => true %>
+    </div>
+    
+    <div class="field">
+      <%= f.label :snippet %><br />
+      <%= f.text_area :snippet %>
+    </div>
+    
+    <div class="field">
+      <%= f.label :content %><br />
+      <%= f.text_area :content, :class => "tinymce" %>
+    </div>
+    
+    <div class="field">
+      <%= f.label :highlight %><br />
+      <%= f.check_box :highlight %>
+    </div>
+    
+    <div class="field">
+      <%= f.label :image %><br />
+      <%= f.image_field :image %>
+    </div>
+    
+    <div class="field">
+      <%= f.label :display %><br />
+      <%= f.check_box :display %>
+    </div>
+    
+  <% end -%>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  
+<% end %>					

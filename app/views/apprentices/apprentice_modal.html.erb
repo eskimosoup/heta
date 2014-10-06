@@ -1,0 +1,21 @@
+<%= javascript_include_tag "application" %>
+
+<!-- Apprentice Popup -->
+  <div class="large-5 columns">
+    <%= image_tag @apprentice.image.show, "data-interchange" => "[#{@apprentice.image.show}, (only screen and (min-width: 1px))], [#{@apprentice.image.mobile_show}, (only screen and (max-width: 700px))]", :alt => @apprentice.name %>
+  </div>
+  <div class="large-7 columns apprentice-info">
+    <h3><%= @apprentice.name %></h3>
+    <% unless @apprentice.company.blank? %>
+      <span>Company:</span> <%= @apprentice.company.name %><br/>
+    <% end %>
+    <span>Job title:</span> <%= @apprentice.job_title %><br/>
+    <span>Year attended HETA:</span> <%= l @apprentice.year_attended, :format => :year %>
+
+    <h4>About <%= @apprentice.name %></h4>
+    <p><%= @apprentice.snippet %></p>
+    <%= link_to "Read full bio", @apprentice %><br/>
+    <%#= link_to "Find out which trade is best for you?", "#", :class => "blue-button fixed-link" %>
+  </div>
+
+  <a class="close-reveal-modal">&#215;</a>

@@ -1,0 +1,21 @@
+/*
+ *= require reset
+ *= require header
+ *= require_self
+ *= require foundation_and_overrides
+ *= require core
+ *= require main
+ *= require navigation
+ *= require banners
+ *= require home
+ *= require articles
+ *= require footer
+ *= require fullcalendar
+ *= require course_instances
+ *= require gallery
+ *= require contact
+ *= require company
+ *= require apprentice
+ *= require page
+ *= require media_queries
+*/

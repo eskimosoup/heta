@@ -1,0 +1,10 @@
+<% title Apprentice.model_name.human.pluralize %>
+
+<div class="admin_functions">
+  <%= link_to "New #{ Apprentice.model_name.human }", new_admin_apprentice_path %>
+</div>
+
+<%= informant_table @apprentices, {
+      :headings => [ '', 'Name', 'Company', 'Apprentice Pathway', 'Highlight', 'Display', 'Image', '', '' ],
+      :body => [ it_sort, :name, lambda{|x| x.company.name if x.company}, :apprentice_pathway_id, it_ajax_toggle(:highlight), it_ajax_toggle(:display), it_edit_images(:image), it_edit, it_destroy ]
+    } %>

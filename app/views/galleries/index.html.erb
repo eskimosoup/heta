@@ -1,0 +1,44 @@
+<% content_for :head do %>
+  <%= javascript_include_tag "colorbox" %>
+  <%= stylesheet_link_tag "colorbox" %>
+<% end %>
+
+<div class="title-spacer"></div>
+
+<div class="title-area">
+  <div class="row">
+    <div class="large-12 columns focus-title-area">
+      <div class="heading-container">
+        <h1>Gallery</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="large-12 columns top-margin"></div>
+
+
+
+
+<% @galleries.each_slice(10) do |slice| %>
+<div class="gallery-row">
+  <ul class="large-block-grid-10 gallery_container small-block-grid-2">
+    <% slice.each do |image| %>
+      <li>
+        <%= link_to image_tag(image.image.small), image.image.show.url, :class => "gallery-group", :title => image.caption %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+
+
+<div id="gallery-reveal" class="reveal-modal gallery-modal">
+</div>
+
+<script type="application/javascript">
+  $(document).ready(function() {
+    $(".gallery-group").colorbox({rel: 'gallery-group', transition: "fade"});
+  });
+</script>

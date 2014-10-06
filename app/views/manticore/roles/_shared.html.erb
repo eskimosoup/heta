@@ -1,0 +1,21 @@
+<li><%= link_to Banner.model_name.human.pluralize, main_app.admin_banners_path %></li>
+<li><%= link_to Company.model_name.human.pluralize, main_app.admin_companies_path %></li>
+<li><%= link_to Article.model_name.human.pluralize, main_app.admin_articles_path %></li>
+<li><%= link_to FooterIcon.model_name.human.pluralize, main_app.admin_footer_icons_path %></li>
+<li><%= link_to 'Pages', main_app.admin_pages_path %></li>
+<li><h2>Apprentices</h2></li>
+<li><%= link_to Apprentice.model_name.human.pluralize, main_app.admin_apprentices_path %></li>
+<li><%= link_to ApprenticePathway.model_name.human.pluralize, main_app.admin_apprentice_pathways_path %></li>
+<li><%#= link_to AvailableApprentice.model_name.human.pluralize, main_app.admin_available_apprentices_path %></li>
+<li><h2>Gallery</h2></li>
+<li><%= link_to Gallery.model_name.human.pluralize, main_app.admin_galleries_path %></li>
+<li><h2>Courses</h2></li>
+<li><%= link_to Course.model_name.human.pluralize, main_app.admin_courses_path %></li>
+<li><%= link_to CourseInstance.model_name.human.pluralize, main_app.admin_course_instances_path %></li>
+<li><%= link_to CourseCategory.model_name.human.pluralize, main_app.admin_course_categories_path %></li>
+<li><%= link_to TrainingLocation.model_name.human.pluralize, main_app.admin_training_locations_path %></li>
+<li><h2>Site Info</h2></li>
+<li><%= link_to CourseSearch.model_name.human.pluralize, main_app.admin_course_searches_path %></li>
+
+<li><%= link_to 'SEO Entries', main_app.admin_seo_entries_path %></li>
+<%# END OF LIST %>

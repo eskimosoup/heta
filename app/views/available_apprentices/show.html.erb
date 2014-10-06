@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @available_apprentice.name %>
+</p>
+
+<p>
+  <b>Trade:</b>
+  <%= @available_apprentice.trade %>
+</p>
+
+<p>
+  <b>Date available from:</b>
+  <%= @available_apprentice.date_available_from %>
+</p>
+
+<p>
+  <b>Image:</b>
+  <%= @available_apprentice.image %>
+</p>
+
+<p>
+  <b>Display:</b>
+  <%= @available_apprentice.display %>
+</p>
+
+
+<%= link_to 'Edit', edit_available_apprentice_path(@available_apprentice) %> |
+<%= link_to 'Back', available_apprentices_path %>

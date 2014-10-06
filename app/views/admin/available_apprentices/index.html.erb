@@ -1,0 +1,10 @@
+<% title AvailableApprentice.model_name.human.pluralize %>
+
+<div class="admin_functions">
+  <%= link_to "New #{ AvailableApprentice.model_name.human }", new_admin_available_apprentice_path %>
+</div>
+
+<%= informant_table @available_apprentices, {
+      :headings => [ 'Name', 'Trade', 'Date Available From', 'Image', 'Display', '', '' ], 
+      :body => [ :name, :trade, :date_available_from, :image, :display, it_edit, it_destroy ]
+    } %>

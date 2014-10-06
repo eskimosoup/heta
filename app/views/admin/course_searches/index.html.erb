@@ -1,0 +1,15 @@
+<% title CourseSearch.model_name.human.pluralize %>
+
+<div class="admin_functions">
+</div>
+
+<%= informant_table @course_searches, {
+      :headings => [ 'Created At', 'Keywords', 'Course Category', 'Course Type', '' ],
+      :body => [ lambda{|x| l x.created_at, format: :long},
+                 :keywords,
+                 :course_category_id,
+                 :course_type,
+                 it_destroy ]
+    } %>
+
+<%= paginate @course_searches %>

@@ -1,0 +1,41 @@
+<div class="title-spacer"></div>
+
+<div class="title-area">
+  <div class="row">
+    <div class="large-12 columns focus-title-area">
+      <div class="heading-container">
+        <h1><%= @page.name %></h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+
+  <div class="large-9 columns top-margin page-content">
+    <% unless @page.image.blank? %>
+      <%= image_tag @page.image.show, :class => "image-border" %>
+    <% end %>
+
+    <%= raw @page.content %>
+
+  </div>
+
+  <div class="large-3 columns top-margin">
+    <%= render "shared/sidebar" if @root_branch %>
+    <% unless @latest_news.blank? %>
+      <div class="sidebar">
+        <h2>Latest News</h2>
+        <ul>
+          <% @latest_news.each do |latest_news| %>
+            <li>
+              <%= link_to latest_news.headline, latest_news %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+  </div>
+</div>
+

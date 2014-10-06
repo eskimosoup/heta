@@ -1,0 +1,152 @@
+<div id="home">
+  <% unless @banners.blank? %>
+  <div id="home-banner">
+    <ul data-orbit>
+      <% @banners.each do |banner| %>
+        <li>
+        <div class="large-7 columns banner-overlay small-3">
+
+        </div>
+
+        <div class="row">
+          <div class="large-6 columns banner-caption">
+            <p><%= banner.caption %></p>
+            <div class="banner-link">
+              <%= link_to banner.link_text, banner.link %>
+            </div>
+          </div>
+        </div>
+          <%= image_tag(banner.image.show, "data-interchange" => "[#{banner.image.show}, (only screen and (min-width: 1px))], [#{banner.image.mobile}, (only screen and (max-width: 700px))]") %>
+          <%#= image_tag(banner.image.mobile, 'data-interchange' => "[#{banner.image.show}, (only screen and (max-width: 1920px))]") %>          
+          <%#= image_tag(banner.image.mobile, 'data-interchange' => "[#{banner.image.show}, (only screen and (max-width: 1920px))]") %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  <div class="clear"></div>
+
+  <section>
+    <div id="company-focus">
+      <div class="title-area">
+        <div class="heading-container">
+          <h1>Company Focus</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+
+    <% @companies.each_slice(8).with_index do |slice, i| %>
+
+      <div class="row home-company-row <% if i > 0 %>mobile-remove-margin<% end %>">
+        <ul class="large-block-grid-8 small-block-grid-4">
+          <% slice.each do |company| %>
+            <li>
+              <%= link_to image_tag(company.image.thumb), company, :class => "cordion-button" %>
+              <div class="accordion-content">
+              herp
+              </div>
+            </li>
+
+          <% end %>
+        </ul>
+
+      </div>
+    <% end %>
+  </section>
+
+  <section>
+    <div id="apprentice-focus">
+      <div class="title-area">
+        <div class="row">
+          <div class="large-12 columns apprentice-focus-title-area">
+            <div class="heading-container">
+              <h1>Apprentice Focus</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="clear"></div>
+
+      <% @apprentices.each_slice(10) do |slice| %>
+        <div class="home-apprentice-row">
+          <ul class="large-block-grid-10 small-block-grid-5">
+            <% slice.each do |apprentice| %>
+              <li>
+                <%= link_to image_tag(apprentice.image.home), apprentice_modal_apprentice_path(apprentice), "data-reveal-id" => "apprentice-reveal", "data-reveal-ajax" => "true" %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+    </div>
+  </section>
+
+  <section>
+    <div id="latest-news">
+      <div class="title-area">
+        <div class="row">
+          <div class="large-12 columns latest-news-title-area">
+            <div class="heading-container">
+              <h1>Latest News</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="clear"></div>
+    </div>
+
+    <div id="articles">
+      <div class="row">
+        <% @articles.each_with_index do |article, i| %>
+          <div class="large-3 columns news-divider">
+            <article>
+              <div class="row">
+                <div class="large-12 columns home-news">
+                  <h2><%= link_to article.headline, article %></h2>
+                  <p><%= article.summary %></p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="large-12 columns home-news-link">
+                  <%= link_to "Read more", article %>
+                  <% if i == 3  %>
+                  <div class="read-more-articles"><%= link_to "View all news", articles_path %></div>
+                  <% end %>
+                </div>
+              </div>
+            </article>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div id="home-trade-courses">
+      <div class="row">
+        <div class="large-10 columns large-offset-1 trade-courses-inner">
+          <h1>Trade Courses: <span>Improve Your Skills</span></h1>
+          <p>HETA has a variety of Electrical and Health & Safety courses for employees of companies who need to update their certifications to current laws and regulations. All courses are held at our state of the art facility and taught by qualified professionals.
+            <br/><span>Click the links below to see our available courses.</span></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="large-10 columns large-offset-1 home-trade-course-navigation">
+          <ul>
+            <li><%= link_to 'View Course Calendar', course_calendar_courses_path %></li>
+            <li><%= link_to 'View Course Listing', courses_path %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div id="apprentice-reveal" class="reveal-modal apprentice-modal">
+  </div>
+
+</div>

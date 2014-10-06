@@ -1,0 +1,50 @@
+<div class="sidebar">
+
+    <h2>Latest News</h2>
+<%#= raise @current_article.to_yaml %>
+
+    <ul class="article-sidebar">
+      <% @articles.each do |article| %>
+        <% unless article.image.blank? %>
+          <li>
+            <% if article == @current_article %>
+              <%= link_to article, :class => "current" do %>
+                <div class="article-sidebar-left">
+                  <%= image_tag article.image.show, :alt => article.headline, :class => "image-border article-sidebar-image" %>
+                </div>
+                <div class="article-sidebar-right">
+                  <%= article.headline %>
+                  <span><%= l article.date %></span>
+                </div>
+              <% end %>
+            <% else %>
+              <%= link_to article do %>
+                <div class="article-sidebar-left">
+                  <%= image_tag article.image.show, :alt => article.headline, :class => "image-border article-sidebar-image" %>
+                </div>
+                <div class="article-sidebar-right">
+                  <%= article.headline %>
+                  <span><%= l article.date %></span>
+                </div>
+              <% end %>
+            <% end %>
+          </li>
+        <% else %>
+          <li>
+            <% if article == @current_article %>
+              <%= link_to article, :class => "current" do %>
+                <%= article.headline %>
+                <span>Published: <%= l article.date %></span>
+              <% end %>
+            <% else %>
+              <%= link_to article do %>
+                <%= article.headline %>
+                <span>Published: <%= l article.date %></span>
+              <% end %>
+            <% end %>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+
+</div>

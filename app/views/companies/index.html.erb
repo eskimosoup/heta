@@ -1,0 +1,33 @@
+<div class="title-spacer"></div>
+
+<div class="title-area">
+  <div class="row">
+    <div class="large-12 columns focus-title-area">
+      <div class="heading-container">
+        <h1>Company Focus</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-12 columns">
+    <div class="letters-navigation">
+      <%= link_to "Show all", companies_path %>
+      <% @letters.each do |letter| %>
+        <%= link_to(letter, companies_path(:letter => letter)) %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<% @companies.each_slice(4) do |slice| %>
+  <div class="row company-row">
+    <% slice.each do |company| %>
+      <div class="large-3 columns">
+        <%= link_to image_tag(company.image.show, :class => "image-border"), company %>
+        <h2><%= company.name %></h2>
+      </div>
+    <% end %>
+  </div>
+<% end %>

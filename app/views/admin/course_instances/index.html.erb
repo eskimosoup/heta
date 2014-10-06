@@ -1,0 +1,13 @@
+<% title CourseInstance.model_name.human.pluralize %>
+
+<div class="admin_functions">
+  <%= link_to "New #{ CourseInstance.model_name.human }", new_admin_course_instance_path %>
+</div>
+
+<%= informant_table @course_instances, {
+      :headings => [ 'Course', 'Start Date', 'End Date', 'Display', '', '' ], 
+      :body => [ lambda{|x| x.course.name if x.course},
+                 :start_date, :end_date, it_ajax_toggle(:display), it_edit, it_destroy ]
+    } %>
+
+<%= paginate @course_instances %>

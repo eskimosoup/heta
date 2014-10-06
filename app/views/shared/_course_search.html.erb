@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="large-12 columns top-margin">
+    <div class="course-search">
+      <div class="row">
+        <%= form_for @search do |f| %>
+
+          <div class="large-3 columns">
+            <div class="field">
+              <%= f.label :keywords %>
+              <%= f.text_field :keywords, :placeholder => "Search term..." %>
+            </div>
+          </div>
+
+          <div class="large-3 columns">
+            <div class="field">
+              <%= f.label :course_category_id %>
+              <%= f.collection_select :course_category_id, CourseCategory.order(:title), :id, :title, :include_blank => true %>
+            </div>
+          </div>
+
+          <!--
+          <div class="large-3 columns">
+            <div class="field">
+              <%= f.label "Type" %>
+              <%= f.select :course_type, options_for_select([["Bookable", "Bookable"], ["On Demand", "On Demand"]], :selected => f.object.course_type), :include_blank => true %>
+            </div>
+          </div>
+          
+          -->
+
+          <div class="large-3 columns end">
+            <div class="field"><%= f.submit "Search" %></div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

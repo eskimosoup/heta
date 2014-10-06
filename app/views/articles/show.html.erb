@@ -1,0 +1,25 @@
+<div class="title-spacer"></div>
+
+<div class="title-area">
+  <div class="row">
+    <div class="large-12 columns focus-title-area">
+      <div class="heading-container">
+        <h1><%= @article.headline %> - <%= @article.date %></h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-9 columns top-margin">
+    <% unless @article.image.blank? %>
+      <%= image_tag @article.image.show, :class => "image-border", :title => @article.headline %>
+    <% end %>
+    <p><%= @article.summary %></p><br/>
+    <%= raw @article.content %>
+  </div>
+
+  <div class="large-3 columns top-margin">
+    <%= render "sidebar" %>
+  </div>
+</div>

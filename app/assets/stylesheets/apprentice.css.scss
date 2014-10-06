@@ -1,0 +1,37 @@
+#apprentice-focus {
+  h2 {
+    color:#303e4d;
+  }
+  h4 {
+    color:#303e4d;
+    border-bottom: 2px dotted #303e4d;
+    display: block;
+    margin-bottom:20px;
+    margin-top:30px;
+  }
+  h4:first-of-type {
+    margin-top:0px;
+  }
+}
+
+.available-apprentice {
+  h2 {
+    color:#303e4d;
+  }
+  h3 {
+    color:#303e4d;
+  }
+}
+
+.apprentice-pathway-apprentices {
+  img {
+    margin-top:10px;
+  }
+  .apprentice-name-tag {
+    background-color:#89c235;
+    display:block;
+    padding:10px;
+    color:#ffffff;
+    font-size:0.8em;
+  }
+}

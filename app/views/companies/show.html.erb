@@ -1,0 +1,23 @@
+<div class="title-spacer"></div>
+
+<div class="title-area">
+  <div class="row">
+    <div class="large-12 columns focus-title-area">
+      <div class="heading-container">
+        <h1><%= @company.name %></h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-4 columns">
+    <% unless @company.image.blank? %>
+      <%= image_tag @company.image.show %>
+    <% end %>
+  </div>
+
+  <div class="large-6 pull-2 columns">
+    <%= @company.content %>
+  </div>
+</div>

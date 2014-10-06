@@ -1,0 +1,26 @@
+.company-row {
+  margin-bottom:20px;
+
+  h2 {
+    color:#303e4d;
+  }
+}
+
+.letters-navigation {
+  //background-color: #2bb4b2;
+  border:1px solid #303e4d;
+  height: 40px;
+  margin-bottom:30px;
+  margin-top:20px;
+  line-height:40px;
+  a {
+    height:38px;
+    display:inline-block;
+    color:#303e4d;
+    padding:0 20px;
+  }
+  a:hover {
+    background-color:#89c235;
+    color:#ffffff;
+  }
+}

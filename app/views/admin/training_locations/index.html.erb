@@ -1,0 +1,10 @@
+<% title TrainingLocation.model_name.human.pluralize %>
+
+<div class="admin_functions">
+  <%= link_to "New #{ TrainingLocation.model_name.human }", new_admin_training_location_path %>
+</div>
+
+<%= informant_table @training_locations, {
+      :headings => [ 'Name', 'Address', 'Postcode', '', '' ],
+      :body => [ :name, :address, :postcode, it_edit, it_destroy ]
+    } %>

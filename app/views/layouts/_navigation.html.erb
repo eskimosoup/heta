@@ -1,0 +1,35 @@
+<div id="navigation" class="hide-for-small">
+  <div class="row">
+    <ul class="large-12 columns">
+      <% unless @navigation.blank? %>
+        <% @navigation.each_with_index do |branch, i| %>
+          <li <%= 'class=active' if @current_branch and @current_branch == branch %>>
+            <%= link_to branch.name, branch.destination %>
+            <% unless branch.children.blank? %>
+              <ul class="first_level">
+                <% branch.children.each do |child| %>
+                  <li>
+                    <%= link_to child.name, child.destination %>
+                    <% if child.children? %>
+                      <ul class="second_level">
+                        <% child.children.each do |nav_child| %>
+                        <li><%= link_to nav_child.name, nav_child.destination %></li>
+                        <% end %>
+                      </ul>
+                    <% elsif child.route == 'apprentice_pathways_path' %>
+                      <ul class="second_level">
+                        <% get_apprentice_pathways.each do |pathway| %>
+                          <li><%= link_to pathway.title, pathway %></li>
+                        <% end %>
+                      </ul>
+                    <% end %>
+                  </li>
+                <% end %>
+              </ul>
+            <% end %>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+</div>

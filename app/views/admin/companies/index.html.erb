@@ -1,0 +1,15 @@
+<% title Company.model_name.human.pluralize %>
+
+<div class="admin_functions">
+  <%= link_to "New #{ Company.model_name.human }", new_admin_company_path %>
+</div>
+
+<%= informant_table @companies, {
+      :headings => [ '', 'Name', 'Image', 'Display', '', '' ],
+      :body => [ it_sort,
+                 :name,
+                 it_edit_images(:image),
+                 it_ajax_toggle(:display),
+                 it_edit,
+                 it_destroy ]
+    } %>

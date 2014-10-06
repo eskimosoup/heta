@@ -1,0 +1,62 @@
+#contact {
+  h2 {
+    color:#303e4d;
+  }
+
+  .contact-form {
+    background-image: url("circuit_board_background.jpg");
+    padding: 40px 0;
+  }
+
+  .contact-form-inner {
+    margin-top:40px;
+    background-color:#303e4d;
+    padding-top:20px;
+    label {
+      color:#ffffff;
+    }
+    textarea {
+      min-height:314px;
+      background-color:#435467;
+      color:#ffffff;
+    }
+    p {
+      color: #ffffff;
+    }
+  }
+  input[type="submit"] {
+    border:none;
+    cursor:pointer;
+    background-color: #2aa5a4;
+    padding: 10px 20px;
+    display: inline-block;
+    color: #ffffff;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+  }
+  input[type="submit"]:hover {
+    background-color:#20676b;
+  }
+  
+  #contact_area {
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    background-color: white;
+    font-family: inherit;
+    border: 1px solid #cccccc;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    color: rgba(0, 0, 0, 0.75);
+    display: block;
+    font-size: 0.875em;
+    margin: 0 0 1em 0;
+    padding: 0.5em;
+    height: 2.3125em;
+    width: 100%;
+  }
+
+  .error-messages {
+    color:#ffffff;
+  }
+}

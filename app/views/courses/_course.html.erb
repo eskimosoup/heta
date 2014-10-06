@@ -1,0 +1,9 @@
+
+  <div class="large-2 columns course-date">
+    <%#= course.id %>
+  </div>
+  <div class="large-10 columns course-container">
+    <h2><%= link_to course.name, course %></h2>
+    <p><%= course.summary %></p>
+    <%= link_to "View details", course, :class => "read-more" %>
+  </div>

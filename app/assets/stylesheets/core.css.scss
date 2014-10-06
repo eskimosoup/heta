@@ -1,0 +1,63 @@
+/*--Main--*/
+
+
+/*-------------------------------------------*/
+/*- TINY MCE COLUMN SETUP                   -*/
+/*-------------------------------------------*/
+
+.admin-column-2 {
+  border:1px solid #666;
+  width:47%;
+  min-height:100px;
+  float:left;
+  margin-left:10px;
+}
+
+.admin-column-3 {
+  border:1px solid #666;
+  width:30%;
+  min-height:100px;
+  float:left;
+  margin-left:10px;
+}
+
+
+/*--Links--*/
+
+/*--Titles--*/
+
+h1 {
+  color:#303e4d;
+  font-weight:bold;
+}
+
+h2 {
+  color:#303e4d;
+  font-weight:bold;
+  letter-spacing: 2px;
+}
+
+h3 {
+  color:#303e4d;
+  font-weight:bold;
+  letter-spacing: 2px;
+}
+
+h4 {
+  border-bottom: 2px dotted #303e4d;
+  color:#303e4d;
+  font-weight:bold;
+  letter-spacing: 2px;
+}
+
+
+/*--Image Styles--*/
+img.image-right {
+	float: right; 
+	margin: 4px 0px 8px 15px;
+}
+
+img.image-left {
+	float: left; 
+	margin: 4px 15px 8px 0px;
+}

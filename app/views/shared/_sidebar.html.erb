@@ -1,0 +1,28 @@
+<div class="sidebar">
+  <h2><%= @root_branch.name %></h2>
+  <ul>
+    <% @root_branch.children.each do |branch| %>
+      <% if (branch == @current_branch) or (branch == @current_branch.parent) %>
+        <li>
+          <%= link_to branch.name, branch.destination, :class => "#{'current' if branch == @current_branch}" %>
+        </li>
+        <% if branch.children? %>
+          <ul class="second_level">
+            <% branch.children.each do |child| %>
+              <li><%= link_to child.name, child.destination, :class => "#{'current' if child == @current_branch}" %></li>
+            <% end %>
+          </ul>
+        <% elsif branch.route == 'apprentice_pathways_path' %>
+          <ul class="second_level">
+            <% get_apprentice_pathways.each do |pathway| %>
+              <li><%= link_to pathway.title, pathway, :class => "#{'current' if pathway == @apprentice_pathway}" %></li>
+            <% end %>
+          </ul>
+        <% end %>
+
+      <% else %>
+        <li><%= link_to branch.name, branch.destination %></li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>

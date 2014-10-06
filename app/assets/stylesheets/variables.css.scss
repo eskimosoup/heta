@@ -1,0 +1,21 @@
+$main_font: Arial, Tahoma, sans-serif;
+
+$default-font-size: 0.9em;
+
+
+//---------------------------------------
+//               Colours
+//---------------------------------------
+
+$primary_colour: #53944c;
+$primary_colour_light: #89c235;
+
+$secondary_colour: #20676b;
+$secondary_colour_light: #2bb4b2;
+
+
+@mixin zero {
+	padding: 0px; 
+	margin: 0px; 
+	border: 0px;
+}

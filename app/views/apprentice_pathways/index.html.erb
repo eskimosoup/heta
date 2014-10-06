@@ -1,0 +1,26 @@
+<div class="title-spacer"></div>
+
+<div class="title-area">
+  <div class="row">
+    <div class="large-12 columns focus-title-area">
+      <div class="heading-container">
+        <h1>Apprentice Pathways</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<% @apprentice_pathways.each_slice(4) do |slice| %>
+  <div class="row company-row">
+    <% slice.each do |apprentice_pathway| %>
+      <div class="large-3 columns">
+        <%= link_to image_tag(apprentice_pathway.image.small, :class => "image-border"), apprentice_pathway %>
+        <h2><%= link_to apprentice_pathway.title, apprentice_pathway %></h2>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+
+

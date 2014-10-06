@@ -1,0 +1,43 @@
+<%= form_for([:admin, @available_apprentice]) do |f| %>
+
+  <%= f.error_messages %>
+
+  <%= field_set_tag 'Basic' do -%>
+    
+    <div class="field">
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= f.label "Location" %><br />
+      <%= f.select :training_location_id, TrainingLocation.all.map{|x| [x.name, x.id]} %>
+    </div>
+    
+    <div class="field">
+      <%= f.label :trade %><br />
+      <%= f.text_field :trade %>
+    </div>
+    
+    <div class="field">
+      <%= f.label :date_available_from %><br />
+      <%= f.date_select :date_available_from %>
+    </div>
+    
+    <div class="field">
+      <%= f.label :image %><br />
+      <%= f.image_field :image %>
+    </div>
+    
+    <div class="field">
+      <%= f.label :display %><br />
+      <%= f.check_box :display %>
+    </div>
+    
+  <% end -%>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  
+<% end %>					

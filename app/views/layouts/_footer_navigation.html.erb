@@ -1,0 +1,11 @@
+<% footer_navigation = Willow::Branch.where(:tree => "Footer Navigation") %>
+
+<ul>
+  <% unless footer_navigation.blank? %>
+    <% footer_navigation.roots.order(:position).each_with_index do |branch, i| %>
+      <li>
+        <%= link_to branch.name, branch.destination %>
+      </li><span>|</span>
+    <% end %>
+  <% end %>
+</ul>

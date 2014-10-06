@@ -1,0 +1,59 @@
+#articles {
+  margin-top:30px;
+
+  img {
+    padding: 5px;
+    border: 1px solid #303e4d;
+  }
+
+  .article-date {
+    font-size:1.5em;
+    font-weight:bold;
+    color:#20676b;
+    padding:30px;
+    text-align:right;
+  }
+
+
+
+  .article-container {
+    border-bottom:1px solid #b5e5e4;
+    padding:30px;
+
+    h2 {
+      color:#353446;
+      font-weight: bold;
+    }
+  }
+
+  .article-container:last-child {
+     border-bottom:none;
+  }
+
+  .read-more {
+    font-weight: bold;
+    padding-right: 10px;
+    background-image: url("link_triangle_blue.png");
+    background-repeat: no-repeat;
+    background-position: 100% 61%;
+  }
+
+  .read-more:hover {
+    color:#20676b;
+    background-image:url('link_triangle_dark_blue.png');
+  }
+}
+
+.article-sidebar-left {
+  width:34%;
+  float:left;
+  .article-sidebar-image {
+    background-color:#fff;
+  }
+}
+
+.article-sidebar-right {
+  width:66%;
+  padding-left:10px;
+  float:left;
+}

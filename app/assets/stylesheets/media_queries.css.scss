@@ -1,0 +1,262 @@
+/* We use this media query to add styles to any device that supports media queries */
+@media only screen { }
+
+@media only screen and (max-width: 767px) {
+  #footer .footer-bottom .footer-middle {
+    -ms-transform: skew(0deg);
+    -webkit-transform: skew(0deg);
+    transform: skew(0deg);
+  }
+
+  h1 {
+    font-size:0.9em;
+  }
+
+  .logo {
+    text-align:center;
+    margin-top:10px;
+  }
+
+  #home-banner {
+     position:relative;
+  }
+
+  .banner-caption {
+    background-color:#353446;
+    opacity: 0.9;
+    filter: alpha(opacity=90); /* For IE8 and earlier */
+    margin-top:150px !important;
+    p {
+      font-size: 1.2em !important;
+      margin-bottom:0px;
+    }
+  }
+
+  .article-date {
+    padding:20px 15px 0px 15px !important;
+  }
+
+  #colorbox {
+    max-width:320px;
+  }
+
+  #colorbox img {
+    float:left;
+    width:300px !important;
+    height:inherit !important;
+  }
+
+  .article-container {
+    padding:10px 15px !important;
+  }
+
+  .banner-link {
+    a {
+      background-color:#89c235;
+      display:block;
+      width:100%;
+      padding:0px 10px;
+    }
+  }
+
+
+  .mobile-menu {
+    position:absolute;
+    background-color:#fff;
+    right:0px;
+    z-index:9999;
+    top:0px;
+    width:60px;
+    height:60px;
+    background-image:url('mobile_menu_icon_dark.png');
+    background-repeat:no-repeat;
+    background-position:5px 5px;
+
+    -webkit-border-bottom-left-radius: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
+  .mobile-menu-list {
+    position:absolute;
+    overflow:hidden;
+    top:0px;
+    right:-90%;
+    width:90%;
+    background-color:#303e4d;
+    z-index:5000;
+    li {
+      position:relative;
+      display:block;
+      float:left;
+      width:100%;
+      margin-bottom:1px;
+      a {
+        background-color:#20676b;
+        padding:10px;
+        float:left;
+        display:block;
+        width:100%;
+        color:#ffffff;
+        font-size:1.2em;
+      }
+      .mobile-nav-children-arrow {
+        position:absolute;
+        right:15px;
+        top:12px;
+      }
+      .active {
+        background-color:#89c235;
+      }
+      .children {
+
+      }
+      .mobile_children_nav {
+        margin-top:1px;
+        float:left;
+        li a {
+          background-color:#3c7e82;
+        }
+      }
+      .mobile_children_nav.closed {
+        height:0%;
+        display:none;
+      }
+    }
+  }
+
+
+  .mobile-search {
+    float:left;
+  }
+
+  #header-search-social {
+    background-color:#20676b;
+    margin-top:70px;
+    padding:50px 10px 10px 10px;
+    margin-bottom:0px !important;
+    form {
+      float:left;
+      margin-top:-44px;
+      width:100%;
+      margin-bottom:0px;
+    }
+    input[type="text"] {
+      border: none;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      font-size:1.1em;
+      border-bottom: 3px solid #c7e2a0;
+      background-repeat: no-repeat;
+      background-position: top right;
+      background-color:transparent;
+      color:#ffffff;
+      width:100%;
+    }
+  }
+
+  .header-search-button {
+    top:80px;
+    right:10px !important;
+    background-image:url('search_icon_white.png') !important;
+  }
+
+
+  #home-banner .banner-caption {
+
+  }
+
+  .home-company-row {
+     margin-top:60px !important;
+   }
+
+  .mobile-remove-margin {
+    margin-top:0px !important;
+  }
+
+  #home .home-company-row .large-block-grid-8 {
+    margin:0px;
+  }
+
+  .home-news {
+    min-height:0px;
+  }
+
+  .news-divider {
+    padding-top:30px;
+    min-height:0px;
+  }
+
+  #articles {
+    margin-top:0px !important;
+  }
+
+  h2 {
+    font-size:1em;
+  }
+
+  .read-more-articles {
+    text-align:center;
+    margin-bottom:30px;
+    a {
+      width:100%;
+    }
+  }
+
+  .close-reveal-modal {
+    background-color: #303e4d;
+    padding:0px 5px;
+  }
+
+  .apprentice-modal {
+    width:100%;
+    left:0;
+    margin-left:0px;
+    top:0;
+  }
+
+  .apprentice-info {
+    padding:20px !important;
+  }
+
+  #footer {
+    .small-block-grid-2 li {
+      margin-bottom:10px;
+    }
+  }
+
+}
+
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+  #header #header-telephone {
+    text-align: right;
+  }
+  
+  #home-banner .banner-caption {
+    width: 47%;
+  }
+}
+
+/* Used to alter styles for screens at least 768px wide. This is where the grid changes. */
+@media only screen
+and (min-device-width : 1024px)
+and (max-device-width : 1280px) {
+  .reveal-modal {
+    width:1100px;
+    margin-left:-550px;
+    margin-top:5%;
+  }
+}
+
+/* Used to alter styles for screens at least 1280px wide. */
+@media only screen
+and (min-device-width : 1281px)
+and (max-device-width : 1600px) {
+  .reveal-modal {
+    width:1100px;
+    margin-left:-550px;
+    margin-top:50px;
+  }
+}

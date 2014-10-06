@@ -1,0 +1,349 @@
+@import "variables";
+
+.apprentice-modal {
+  background-color:#303e4d !important;
+  padding:0 0 0 0;
+  border:none;
+  position:fixed;
+  .columns {
+    padding-left:0;
+    padding-right:0;
+  }
+  .apprentice-info {
+    padding:50px 50px 0 50px;
+    color:#ffffff;
+    line-height:1.7;
+    span {
+      color:#bcb8e0;
+      font-weight:bold;
+    }
+    h3 {
+      color:$primary_colour_light;
+    }
+    h4 {
+      margin-top:30px;
+      border-bottom: 2px dotted #bcb8e0;
+      color:#ffffff;
+      display:block;
+    }
+    a:link {
+      font-weight: bold;
+      padding-right: 10px;
+      background-image: url("link_triangle_blue.png");
+      background-repeat: no-repeat;
+      background-position: 100% 61%;
+    }
+    a:hover {
+      color:#20676b;
+      background-image:url('link_triangle_dark_blue.png');
+    }
+    .fixed-link {
+      margin-top:20px;
+      float:right;
+    }
+  }
+}
+
+#apprentice-focus {
+
+  [class*="block-grid-"] {
+    margin:0;
+  }
+
+  [class*="block-grid-"] > li {
+    padding:0 0 0 0;
+    overflow:hidden;
+  }
+
+  .home-apprentice-row {
+    background-color:#353446;
+    a:link {
+      opacity:0.7;
+      filter:alpha(opacity=70); /* For IE8 and earlier */
+      img {
+        -webkit-transform: scale(1,1);
+        -moz-transform: scale(1,1);
+        transform: scale(1,1);
+
+        -webkit-transition-timing-function: ease-out;
+        -moz-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
+
+        -webkit-transition-duration: 250ms;
+        -moz-transition-duration: 250ms;
+        transition-duration: 250ms;
+      }
+    }
+    a:hover {
+      opacity:1;
+      filter:alpha(opacity=100); /* For IE8 and earlier */
+      img {
+        -webkit-transform: scale(1.05,1.05);
+        -moz-transform: scale(1.05,1.05);
+        transform: scale(1.05,1.05);
+
+        -webkit-transition-timing-function: ease-out;
+        -moz-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
+
+        -webkit-transition-duration: 250ms;
+        -moz-transition-duration: 250ms;
+        transition-duration: 250ms;
+      }
+    }
+  }
+
+  .title-area {
+    float: left;
+    width: 100%;
+    height: 86px;
+    background-color: $primary_colour_light;
+    text-align:center;
+    margin-bottom:5px;
+
+    .heading-container {
+      background-color:$primary_colour;
+      border:3px solid #ffffff;
+      display:inline-block;
+      padding:10px 20px;
+      margin-top:30px;
+
+      -ms-transform: skew(20deg); /* IE 9 */
+      -webkit-transform: skew(20deg); /* Chrome, Safari, Opera */
+      transform: skew(20deg);
+    }
+
+    .apprentice-focus-title-area {
+      background-color:#ffffff;
+      background-image:url('green_title_area_left.png'), url('green_title_area_right.png');
+      background-position:top left, top right;
+      background-repeat:no-repeat, no-repeat;
+      height:56px;
+    }
+
+    h1 {
+      margin:0 0;
+      text-transform: uppercase;
+      -ms-transform: skew(-20deg); /* IE 9 */
+      -webkit-transform: skew(-20deg); /* Chrome, Safari, Opera */
+      transform: skew(-20deg);
+    }
+  }
+}
+
+#home {
+
+  .accordion-content {
+    position:absolute;
+    display: none;
+    height:300px;
+    width:100%;
+    background-color:#555;
+    float:left;
+  }
+
+  #company-focus {
+
+    .title-area {
+      float: left;
+      width: 100%;
+      height: 30px;
+      background-color: #e5efe4;
+      text-align:center;
+
+      .heading-container {
+        background-color:#353446;
+        border:3px solid #ffffff;
+        display:inline-block;
+        padding:10px 20px;
+
+        -ms-transform: skew(-20deg); /* IE 9 */
+        -webkit-transform: skew(-20deg); /* Chrome, Safari, Opera */
+        transform: skew(-20deg);
+      }
+
+      h1 {
+        margin:0 0;
+        text-transform: uppercase;
+        -ms-transform: skew(20deg); /* IE 9 */
+        -webkit-transform: skew(20deg); /* Chrome, Safari, Opera */
+        transform: skew(20deg);
+      }
+    }
+  }
+
+  .home-company-row {
+    margin-top:40px;
+
+    .large-block-grid-8 {
+      margin:30px 0;
+    }
+  }
+
+
+
+  #latest-news {
+    padding-top: 30px;
+    background-color:#20676b;
+    margin-top:5px;
+
+    .title-area {
+      float: left;
+      width: 100%;
+      height: 86px;
+      background-color: #ffffff;
+      text-align:center;
+
+      .heading-container {
+        background-color:#353446;
+        border:3px solid #ffffff;
+        display:inline-block;
+        padding:10px 20px;
+        margin-top:30px;
+
+        -ms-transform: skew(-20deg); /* IE 9 */
+        -webkit-transform: skew(-20deg); /* Chrome, Safari, Opera */
+        transform: skew(-20deg);
+      }
+
+      .latest-news-title-area {
+        background-color:#20676b;
+        background-image:url('white_title_area_left.png'), url('white_title_area_right.png');
+        background-position:top left, top right;
+        background-repeat:no-repeat, no-repeat;
+        height:56px;
+      }
+
+      h1 {
+        margin:0 0;
+        text-transform: uppercase;
+        -ms-transform: skew(20deg); /* IE 9 */
+        -webkit-transform: skew(20deg); /* Chrome, Safari, Opera */
+        transform: skew(20deg);
+      }
+    }
+  }
+
+  #articles {
+    margin-top:30px;
+    h2 {
+      color:#353446;
+      font-weight:bold;
+    }
+  }
+
+}
+
+//---------------------------------------------
+//                News Section
+//---------------------------------------------
+
+.home-news {
+  min-height:250px;
+}
+
+.news-divider {
+  border-right:1px solid #b5e5e4;
+  min-height:400px;
+  padding-top:50px;
+}
+
+.news-divider:last-child {
+  border-right: none;
+}
+
+.home-news-link {
+  a:link {
+    font-weight:bold;
+    padding-right:10px;
+    background-image:url('link_triangle_blue.png');
+    background-repeat:no-repeat;
+    background-position:100% 61%;
+  }
+  a:hover {
+    color:#20676b;
+    background-image:url('link_triangle_dark_blue.png');
+  }
+}
+
+.read-more-articles {
+  text-align:right;
+  margin-top:20px;
+  a:link {
+    background-image:none;
+    background-color:#2aa5a4;
+    padding:10px 20px;
+    display:inline-block;
+    color:#ffffff;
+
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+  }
+
+  a:hover {
+    background-image:none;
+    color:#ffffff;
+    background-color:#20676b;
+  }
+
+  a:visited {
+    color:#ffffff;
+  }
+}
+
+
+
+
+//---------------------------------------------
+//                Home Trade Courses
+//---------------------------------------------
+
+#home-trade-courses {
+  background-image:url('circuit_board_background.jpg');
+  padding:40px 0;
+  .trade-courses-inner {
+    background-color:#313f4e;
+    text-align:center;
+    padding:30px;
+    h1 {
+      text-transform: uppercase;
+      font-weight:100;
+      color:#ffffff;
+      span {
+        font-weight: 700;
+        color:#ffffff;
+      }
+    }
+    p {
+      color:#ffffff;
+      span {
+        color:$primary_colour_light;
+      }
+    }
+  }
+
+  .home-trade-course-navigation {
+    background-color:#2bb4b2;
+    height:40px;
+  }
+
+  ul {
+    display:block;
+    margin:0 auto;
+    text-align:center;
+    li {
+      display:inline;
+      padding:0 10px;
+      line-height:40px;
+      a {
+        color:#ffffff;
+        font-weight: bold;
+        padding-right: 10px;
+        background-image: url("link_triangle_white.png");
+        background-repeat: no-repeat;
+        background-position: 100% 61%;
+      }
+    }
+  }
+}

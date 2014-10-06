@@ -1,0 +1,91 @@
+<div class="title-spacer"></div>
+
+<div class="title-area">
+  <div class="row">
+    <div class="large-12 columns focus-title-area">
+      <div class="heading-container">
+        <h1>Course Listings</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render "shared/course_search" %>
+
+<div id="course-listings">
+  <div class="row">
+    <% if @courses.blank? %>
+      <div class="large-12 columns">
+        <p>Sorry no courses found, try broadening your search.</p>
+      </div>
+    <% else %>
+      <% @all_courses.each do |course| %>
+       <div class="large-2 columns course-date">
+
+        </div>
+        <div class="large-10 columns course-container">
+          <% if course.course_instances.present? %>
+            <h2><%= link_to course.name, course.course_instances.first %></h2>
+          <% else %>
+            <h2><%= link_to course.name, course %></h2>
+          <% end %>
+
+          <p><%= course.summary %></p>
+          <% unless course.course_instances.blank? %>
+            <div class="instance-dates">
+              Current Dates:
+              <% course.course_instances.each do |instance| %>
+                <span><%= link_to (l instance.start_date), instance %></span>
+              <% end %>
+            </div>
+          <% end %>
+          <%= link_to "View details", course, :class => "read-more" %>
+        </div>
+      <% end %>
+      
+     <!--
+      <div class="large-12 columns"><h1>Bookable Courses</h1></div>
+     
+      <% @bookable_courses.each do |course| %>
+        <div class="large-2 columns course-date">
+
+        </div>
+        <div class="large-10 columns course-container">
+          <% if course.course_instances.present? %>
+            <h2><%= link_to course.name, course.course_instances.first %></h2>
+          <% else %>
+            <h2><%= link_to course.name, course %></h2>
+          <% end %>
+
+          <p><%= course.summary %></p>
+          <% unless course.course_instances.blank? %>
+            <div class="instance-dates">
+              Current Dates:
+              <% course.course_instances.each do |instance| %>
+                <span><%= link_to (l instance.start_date), instance %></span>
+              <% end %>
+            </div>
+          <% end %>
+          <%= link_to "View details", course, :class => "read-more" %>
+        </div>
+      <% end %>
+        <div class="large-12 columns"><h1>On Demand Courses</h1></div>
+        <% @ondemand_courses.each do |course| %>
+          <div class="large-2 columns course-date">
+            <%#= course.id %>
+          </div>
+          <div class="large-10 columns course-container">
+            <% if course.course_instances.present? %>
+              <h2><%= link_to course.name, course.course_instances.first %></h2>
+            <% else %>
+              <h2><%= link_to course.name, course %></h2>
+            <% end %>
+
+            <p><%= course.summary %></p>
+            <%= link_to "View details", course, :class => "read-more" %>
+          </div>
+      <% end %>
+      -->
+    <% end %>
+  </div>
+</div>

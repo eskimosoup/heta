@@ -1,0 +1,24 @@
+<% title Course.model_name.human.pluralize %>
+
+<div class="admin_functions">
+  <%= link_to "New #{ Course.model_name.human }", new_admin_course_path %>
+</div>
+
+<%= informant_table @courses, {
+      :headings => [ 'Name', 'Individual Price', 'Group Price', 'Min Place', 'Max Place', 'Min Group Number', 'Max Group Number', 'Length', 'Category', 'Type', 'Display', '', '' ],
+      :body => [ :name,
+                 :individual_price,
+                 :group_price,
+                 :min_place,
+                 :max_place,
+                 :min_group_number,
+                 :max_group_number,
+                 :length,
+                 lambda{|x| x.course_category.title if x.course_category},
+                 :course_type,
+                 it_ajax_toggle(:display),
+                 it_edit,
+                 it_destroy ]
+    } %>
+
+<%= paginate @courses %>

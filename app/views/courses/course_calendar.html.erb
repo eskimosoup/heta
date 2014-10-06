@@ -1,0 +1,59 @@
+<script>
+
+  $(document).ready(function() {
+
+    var green  = '#53944c';
+    var blue   = '#20676b';
+    var purple = '#303e4d';
+
+    $('#calendar').fullCalendar({
+      contentHeight: 600,
+      editable: true,
+      events: [
+
+        <% @course_instances.each do |course_instance|%>
+          {
+            id: <%= course_instance.course.id %>,
+            title: '<%= course_instance.course.name %>',
+            category: '<%= course_instance.course.course_category.title %>',
+            location: '<%= course_instance.training_location.name %>',
+            start: '<%= course_instance.start_date %>',
+            end: '<%= course_instance.end_date %>',
+            allDay: true,
+            url: '<%= course_instance_path(course_instance) %>',
+            color:<% if course_instance.start_date < Date.today  %>'#aaa'<% else %><%= course_instance.course.course_category.colour %><% end %>
+          },
+        <% end %>
+      ],
+      eventRender: function( event, element, view )
+      {
+        //add cellpadding to the event
+        var cellpadding = '5px';
+        $(element).css('padding', cellpadding);
+        //redo the title to include the category
+        element.find(".fc-event-title").html(event.title + "<br/><span>Location: " + event.location + "</span>");
+      }
+
+    });
+
+  });
+
+</script>
+
+<div class="title-spacer"></div>
+
+<div class="title-area">
+  <div class="row">
+    <div class="large-12 columns focus-title-area">
+      <div class="heading-container">
+        <h1>Course Calendar</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-12 columns">
+    <div id='calendar'></div>
+  </div>
+</div>

@@ -1,0 +1,58 @@
+<div id="footer">
+  <% unless @footer_icons.blank? %>
+    <div class="row">
+      <ul class="large-block-grid-10 footer-icons small-block-grid-2">
+        <% @footer_icons.each do |icon| %>
+          <li><%= image_tag icon.image.thumb, :alt => icon.name, :title => icon.name %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="footer-bottom">
+    <div class="row">
+      <div class="large-2 columns footer-left">
+        <% unless SITE_SETTINGS['Telephone Hull'].blank? %>
+          <span>Hull:</span> <%= SITE_SETTINGS['Telephone Hull'] %><br/>
+        <% end %>
+
+        <% unless SITE_SETTINGS['Telephone Grimsby'].blank? %>
+          <span>Grimsby:</span> <%= SITE_SETTINGS['Telephone Grimsby'] %><br/>
+        <% end %>
+
+        <% unless SITE_SETTINGS['Telephone Scunthorpe'].blank? %>
+          <span>Scunthorpe:</span> <%= SITE_SETTINGS['Telephone Scunthorpe'] %><br/>
+        <% end %>
+      </div>
+
+      <div class="large-5 columns footer-middle">
+        <div class="footer-middle-inner">
+          <% unless SITE_SETTINGS['Name'].blank? %>
+            <%= SITE_SETTINGS['Name'] %><br/>
+          <% end %>
+
+          <% unless SITE_SETTINGS['Address'].blank? %>
+            <%= SITE_SETTINGS['Address'] %><br/>
+          <% end %>
+
+          <% unless SITE_SETTINGS['Reg No'].blank? %>
+            Reg No: <%= SITE_SETTINGS['Reg No'] %>
+          <% end %>
+
+          <% unless SITE_SETTINGS['VAT No'].blank? %>
+            VAT No: <%= SITE_SETTINGS['VAT No'] %>
+          <% end %>
+
+          <% unless SITE_SETTINGS['Charity No'].blank? %>
+            Charity Number: <%= SITE_SETTINGS['Charity No'] %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="large-5 columns footer-right">
+        <%= render "layouts/footer_navigation" %>
+        &copy; <%= SITE_SETTINGS['Name'] %> Website by eskimosoup
+      </div>
+    </div>
+  </div>
+</div>
