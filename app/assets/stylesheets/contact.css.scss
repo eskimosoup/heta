@@ -2,6 +2,11 @@
   h2 {
     color:#303e4d;
   }
+  h3 {
+    color: #fff;
+    margin-bottom: 10px;
+    letter-spacing: 0;
+  }
 
   .contact-form {
     background-image: url("circuit_board_background.jpg");
@@ -12,6 +17,8 @@
     margin-top:40px;
     background-color:#303e4d;
     padding-top:20px;
+    color:#ffffff;
+
     label {
       color:#ffffff;
     }
@@ -24,6 +31,23 @@
       color: #ffffff;
     }
   }
+
+  .address {
+    line-height: 1.25;
+
+    div {
+      @media screen and (max-width: 64em) {
+        margin: 10px 0 0 0;
+      } 
+      
+      &.small-addr {
+        @media screen and (min-width: 64.01em) {        
+          margin: 17px 0 0 0;
+        }
+      }
+    }
+  }
+
   input[type="submit"] {
     border:none;
     cursor:pointer;
@@ -38,7 +62,7 @@
   input[type="submit"]:hover {
     background-color:#20676b;
   }
-  
+
   #contact_area {
     -webkit-border-radius: 0;
     border-radius: 0;

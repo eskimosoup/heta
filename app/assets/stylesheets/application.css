@@ -17,5 +17,6 @@
  *= require company
  *= require apprentice
  *= require page
+ *= require team_members
  *= require media_queries
 */

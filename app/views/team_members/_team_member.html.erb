@@ -1,0 +1,19 @@
+
+  <li>
+    <% if team_member == @current_team_member %>
+      <%= link_to team_member, :class => "current" do %>
+        <div class="description">
+          <span class="name"><%= team_member.name %></span>
+          <span class="job-title"><%= team_member.job_title %></span>
+        </div>
+        <div class="image">
+          <%= image_tag team_member.image.small, alt: team_member.name, :class => "image-border" %>
+        </div>
+      <% end %>
+    <% else %>
+      <%= link_to team_member do %>
+        <span class="name"><%= team_member.name %></span>
+        <span class="job-title"><%= team_member.job_title %></span>
+      <% end %>
+    <% end %>
+  </li>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140612110548) do
+ActiveRecord::Schema.define(:version => 20141007094025) do
 
   create_table "apprentice_pathways", :force => true do |t|
     t.string   "title"
@@ -205,6 +205,18 @@ ActiveRecord::Schema.define(:version => 20140612110548) do
     t.boolean  "in_sitemap",       :default => true
     t.datetime "created_at",                         :null => false
     t.datetime "updated_at",                         :null => false
+  end
+
+  create_table "team_members", :force => true do |t|
+    t.integer  "position"
+    t.string   "name"
+    t.string   "job_title"
+    t.text     "summary"
+    t.text     "content"
+    t.string   "image"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.boolean  "display"
   end
 
   create_table "training_locations", :force => true do |t|
