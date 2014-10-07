@@ -1,5 +1,4 @@
 Heta::Application.routes.draw do
-
   get "sitemap" => "application#sitemap"
 
   namespace :admin do
@@ -9,37 +8,45 @@ Heta::Application.routes.draw do
   end
 
 
+  resources :team_members,            path: "management-team"
+  resources :apprentice_pathways,     only: [:index, :show]
+  resources :available_apprentices,   only: [:index]
+  resources :galleries,               only: [:index]
+  resources :pages,                   only: [:show]
 
-  resources :apprentice_pathways, only: [:index, :show]
-  resources :available_apprentices, only: [:index]
-  resources :galleries, only: [:index]
-  resources :pages, only: [:show]
-  resources :courses, only: [:index, :show] do
-    get 'course_calendar', on: :collection
-  end
-  resources :course_searches, only: [:create, :index, :update, :show]
-  resources :course_instances, only: [:show]
-  resources :articles, only: [:index, :show]
+  resources :course_searches,         only: [:create, :index, :update, :show]
+  resources :course_instances,        only: [:show]
+  resources :articles,                only: [:index, :show]
+
+  resources :companies,               only: [:index, :show]
+  resources :contacts,                :only => [:new, :create]
+
   resources :apprentices, only: [:index, :show] do
     get 'apprentice_modal', :on => :member
   end
-  resources :companies, only: [:index, :show]
-  resources :contacts, :only => [:new, :create]
+
+  resources :courses, only: [:index, :show] do
+    get 'course_calendar', on: :collection
+  end
+
+
 
   namespace :admin do
-    manticore_resources :course_searches
+    chronicler_resources :team_members
     chronicler_resources :available_apprentices
     chronicler_resources :apprentice_pathways
     chronicler_resources :pages
-    manticore_resources :courses
     chronicler_resources :banners
     chronicler_resources :companies
     chronicler_resources :apprentices
     chronicler_resources :footer_icons
     chronicler_resources :articles
+    chronicler_resources :galleries
+
+    manticore_resources :course_searches
+    manticore_resources :courses
     manticore_resources :course_instances
     manticore_resources :course_categories
-    chronicler_resources :galleries
     manticore_resources :training_locations
   end
 

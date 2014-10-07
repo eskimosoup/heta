@@ -15,15 +15,45 @@
 <div class="contact-form">
   <div class="row">
     <div class="large-10 large-offset-1 columns contact-form-inner">
-      <p><%= flash[:notice] unless flash[:notice].blank? %></p>
+
+      <h3>Our Sites</h3>
+
+      <div class="row address">
+        <div class="large-3 columns">
+          <strong>Hull (Head Office)</strong><br />
+          Copenhagen Road,<br />
+          Sutton Fields,<br />
+          Hull,<br />
+          HU7 0XJ
+          <div class="small-addr">Tel: 01482 826635</div>
+        </div>
+
+        <div class="large-3 columns">
+          <strong>Stallingborough</strong><br />
+          c/o CATCH,<br />
+          Kiln Lane,<br />
+          Stallingborough,<br />
+          DN41 8TH
+          <div class="small-addr">Tel: 01469 552880</div>
+        </div>
+
+        <div class="large-3 columns end">
+          <strong>Scunthorpe</strong><br />
+          Unit 3,<br />
+          Ram Boulevard,<br />
+          Foxhills Industrial Estate,<br />
+          Scunthorpe,<br />
+          DN15 8QW
+          <div>Tel: 03303 331501</div>
+        </div>
+
+      </div>
       
+      <p><%= flash[:notice] unless flash[:notice].blank? %></p>
+
       <%= render "form" %>
     </div>
   </div>
 </div>
 
 </div>
-
-
-
-

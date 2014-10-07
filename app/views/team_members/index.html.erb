@@ -1,0 +1,36 @@
+<div class="title-spacer"></div>
+
+<div class="title-area">
+  <div class="row">
+    <div class="large-12 columns focus-title-area">
+      <div class="heading-container">
+        <h1><%= @title %></h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="team-members">
+
+  <% @team_members.each do |member| %>
+    <div class="row">
+      <div class="large-10 columns wrap end">
+        <div class="row">
+          <div class="large-9 columns">
+            <h2 class="name"><%= member.name %></h2>
+            <div class="job-title"><%= member.job_title %></div>
+
+            <%= simple_format member.summary %>
+            <%= link_to "Read more", member, :class => "read-more" %>
+          </div>
+
+          <div class="large-3 columns">
+            <%= image_tag member.image.small %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  </div>
+</div>

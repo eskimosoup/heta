@@ -1,0 +1,29 @@
+<div class="team-member">
+  <div class="title-spacer"></div>
+
+  <div class="title-area">
+    <div class="row">
+      <div class="large-12 columns focus-title-area">
+        <div class="heading-container">
+          <h1><%= @team_member.name %></h1>
+          <span class="job-title"><%= @team_member.job_title %></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-6 columns top-margin">
+      <%= simple_format @team_member.summary %>
+      <%= raw @team_member.content %>
+    </div>
+
+    <div class="large-3 columns top-margin">
+      <%= image_tag @team_member.image.show, class: "image-border image-right", alt: @team_member.name %>
+    </div>
+
+    <div class="large-3 columns">
+      <%= render "sidebar" %>
+    </div>
+  </div>
+</div>

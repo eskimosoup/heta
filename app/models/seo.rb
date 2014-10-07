@@ -16,6 +16,8 @@ class SEO
         Course.where(display: true)
       when 'pages'
         Page.where(display: true)
+      when 'team_members'
+          TeamMember.where(display: true)
       else
         []
     end
@@ -37,6 +39,8 @@ class SEO
         Course.where(display: true)
       when 'pages'
         Page.where(display: true)
+      when 'team_members'
+          TeamMember.where(display: true).order(:position)
     else
       []
     end
