@@ -31,7 +31,7 @@ class ApplicationController < ActionController::Base
     @banners             = Banner.where(:display => true).order(:position)
     @companies           = Company.where(:display => true).order(:position)
     @apprentices         = Apprentice.where(:display => true).where(:highlight => true).order(:position)
-    @articles            = Article.where("display = ? and date <= ?", true, Date.today).limit(4)
+    @articles            = Article.where("display = ? and date <= ?", true, Date.today).limit(4).order('date desc')
     @course_categories   = CourseCategory.all
 
     @current_branch = Willow::StaticPage.find_by_name('Home').branch
