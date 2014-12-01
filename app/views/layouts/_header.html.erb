@@ -37,10 +37,10 @@
   <div id="header-telephone" class="large-9 columns text-right">
     Hull: <span><%= SITE_SETTINGS['Telephone Hull'] %></span> <span class="divider">|</span> HETA @ CATCH (Stallingborough): <span><%= SITE_SETTINGS['Telephone Grimsby'] %></span> <span class="divider">|</span> Scunthorpe: <span><%= SITE_SETTINGS['Telephone Scunthorpe'] %></span>
   </div>
-  
+
   <div id="header-internal-links" class="large-3 columns">
     <%= link_to 'Moodle', 'https://moodle.heta.co.uk/login/index.php', target: "_blank" %> <span class="divider">|</span>
-    
+
     <%= link_to 'SkillsBuilder', 'http://learn.forskills.co.uk/institution/heta/', target: "_blank" %>
   </div>
 </div>
@@ -54,7 +54,7 @@
         <% unless SITE_SETTINGS['Twitter'].blank? %>
           <%= link_to image_tag("twitter.png"), SITE_SETTINGS['Twitter'] %>
         <% end %>
-        
+
         <% unless SITE_SETTINGS['Facebook'].blank? %>
           <%= link_to image_tag("facebook.png"), SITE_SETTINGS['Facebook'] %>
         <% end %>
@@ -64,11 +64,16 @@
 
         <% end %>
 
+
+        <% unless @apply_now.blank? %>
+          <div class="apply-now-wrap">
+            <%= link_to 'Apply Now', 'http://www.latestvacancies.com/heta/defaultnew.asp', target: '_blank', class: 'apply-now' %>
+          </div>
+        <% end %>
+
       </div>
     </div>
   </div>
 </div>
 
 </div>
-
-

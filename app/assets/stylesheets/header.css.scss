@@ -14,8 +14,8 @@
       margin:0 10px;
     }
   }
-  
-  
+
+
   #header-internal-links {
     margin-top:10px;
     text-align:center;
@@ -73,6 +73,24 @@
         background-repeat: no-repeat;
         background-position:top right;
       }
+    }
+  }
+
+  .apply-now-wrap {
+    margin-top: 43px;
+  }
+
+  .apply-now {
+    background: #e68d40;
+    color: #fff;
+    display: inline-block;
+    font-size: 16px;
+    margin: 0 10px;
+    padding: 10px;
+    text-transform: uppercase;
+
+    &:hover {
+      background: #ef792b;
     }
   }
 }

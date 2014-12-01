@@ -26,13 +26,13 @@
       font-weight:bold;
       float:left;
       color:#ffffff;
-      padding:10px 15px;
+      padding:10px 13px;
     }
     a:hover {
       background-color:$primary_colour_light;
     }
 
-    
+
     ul {
       display:none;
       width:200px;
@@ -60,11 +60,11 @@
         }
       }
     }
-    
+
     li:hover .second_level {
       display:block;
     }
-    
+
   }
 
   ul li .second_level {
@@ -72,7 +72,7 @@
     margin-left:200px;
     margin-top: 0;
     li {
-     
+
     }
   }
 

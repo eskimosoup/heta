@@ -25,7 +25,7 @@ $(document).foundation('orbit', {
   resume_on_mouseout: true,
   animation_speed: 1000,
   stack_on_small: false,
-  navigation_arrows: false,
+  navigation_arrows: true,
   slide_number: false,
   container_class: 'orbit-container',
   stack_on_small_class: 'orbit-stack-on-small',
@@ -56,10 +56,10 @@ $(document).foundation('reveal', {
 
 $(document).on('opened', '.reveal-modal.gallery-modal', function () {
   var modal = $(this);
-  
+
   var imgWidth = $('.reveal-modal.gallery-modal .image-show').width();
   var containerWidth = $(this).width();
-  
+
   $('.reveal-modal-inner-gallery').width( ( Math.round( imgWidth / containerWidth * 100 ) + 1 ) + '%' );
   //$('.reveal-modal-inner-gallery').addClass( 'reveal-modal-inner-shadow', 3500 );
   $('.close-reveal-modal').fadeIn('slow');
@@ -118,4 +118,3 @@ $(".accordion-button").hover(
       $(this).removeClass("hover");
     }
 );
-
