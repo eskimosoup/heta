@@ -1,4 +1,6 @@
 Heta::Application.routes.draw do
+  namespace :admin do manticore_resources :display_toggles end
+
   get "sitemap" => "application#sitemap"
 
   namespace :admin do

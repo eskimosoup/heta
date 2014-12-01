@@ -1,0 +1,12 @@
+<% title DisplayToggle.model_name.human.pluralize %>
+
+<% if @current_administrator.role == 'souper' %>
+  <div class="admin_functions">
+    <%= link_to "New #{ DisplayToggle.model_name.human }", new_admin_display_toggle_path %>
+  </div>
+<% end %>
+
+<%= informant_table @display_toggles, {
+      :headings => [ 'Name', 'Display', '', '' ],
+      :body => [ :name, it_ajax_toggle(:display), it_edit, it_destroy ]
+    } %>
