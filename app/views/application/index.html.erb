@@ -17,7 +17,7 @@
           </div>
         </div>
           <%= image_tag(banner.image.show, "data-interchange" => "[#{banner.image.show}, (only screen and (min-width: 1px))], [#{banner.image.mobile}, (only screen and (max-width: 700px))]") %>
-          <%#= image_tag(banner.image.mobile, 'data-interchange' => "[#{banner.image.show}, (only screen and (max-width: 1920px))]") %>          
+          <%#= image_tag(banner.image.mobile, 'data-interchange' => "[#{banner.image.show}, (only screen and (max-width: 1920px))]") %>
           <%#= image_tag(banner.image.mobile, 'data-interchange' => "[#{banner.image.show}, (only screen and (max-width: 1920px))]") %>
         </li>
       <% end %>
@@ -58,35 +58,6 @@
   </section>
 
   <section>
-    <div id="apprentice-focus">
-      <div class="title-area">
-        <div class="row">
-          <div class="large-12 columns apprentice-focus-title-area">
-            <div class="heading-container">
-              <h1>Apprentice Focus</h1>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="clear"></div>
-
-      <% @apprentices.each_slice(10) do |slice| %>
-        <div class="home-apprentice-row">
-          <ul class="large-block-grid-10 small-block-grid-5">
-            <% slice.each do |apprentice| %>
-              <li>
-                <%= link_to image_tag(apprentice.image.home), apprentice_modal_apprentice_path(apprentice), "data-reveal-id" => "apprentice-reveal", "data-reveal-ajax" => "true" %>
-              </li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
-    </div>
-  </section>
-
-  <section>
     <div id="latest-news">
       <div class="title-area">
         <div class="row">
@@ -124,6 +95,35 @@
           </div>
         <% end %>
       </div>
+    </div>
+  </section>
+
+  <section>
+    <div id="apprentice-focus">
+      <div class="title-area">
+        <div class="row">
+          <div class="large-12 columns apprentice-focus-title-area">
+            <div class="heading-container">
+              <h1>Apprentice Focus</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="clear"></div>
+
+      <% @apprentices.each_slice(10) do |slice| %>
+      <div class="home-apprentice-row">
+        <ul class="large-block-grid-10 small-block-grid-5">
+          <% slice.each do |apprentice| %>
+          <li>
+            <%= link_to image_tag(apprentice.image.home), apprentice_modal_apprentice_path(apprentice), "data-reveal-id" => "apprentice-reveal", "data-reveal-ajax" => "true" %>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+      <% end %>
     </div>
   </section>
 
