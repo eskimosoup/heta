@@ -42,7 +42,7 @@ class ApplicationController < ActionController::Base
   def navigation_and_footer_content
     @navigation = Willow::Branch.includes(:leaf).where(:tree => "Main Navigation").roots.order(:position)
     @footer_icons = FooterIcon.where(:display => true).order(:position).limit(10)
-    @apply_now = DisplayToggle.where(name: 'Apply Now', display: true).first
+    @apply_now = DisplayToggle.where(display: true).first
   end
 
 
