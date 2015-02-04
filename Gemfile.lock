@@ -9,14 +9,14 @@ PATH
 PATH
   remote: ../informant
   specs:
-    informant (0.1.4)
+    informant (0.1.5)
       rails
 
 PATH
   remote: ../manticore
   specs:
-    manticore (0.2.2)
-      cancancan
+    manticore (0.2.1)
+      cancan
       chronicler
       coffee-rails
       informant
@@ -74,7 +74,7 @@ GEM
     arel (3.0.3)
     bcrypt-ruby (3.0.1)
     builder (3.0.4)
-    cancancan (1.9.2)
+    cancan (1.6.10)
     carrierwave (0.10.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
@@ -108,7 +108,7 @@ GEM
     jquery-ui-rails (5.0.3)
       railties (>= 3.2.16)
     json (1.8.1)
-    kaminari (0.16.1)
+    kaminari (0.16.2)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
     libv8 (3.16.14.7)
