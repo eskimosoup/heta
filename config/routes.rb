@@ -1,6 +1,4 @@
 Heta::Application.routes.draw do
-  namespace :admin do manticore_resources :display_toggles end
-
   get "sitemap" => "application#sitemap"
 
   namespace :admin do
@@ -8,7 +6,6 @@ Heta::Application.routes.draw do
       get 'rebuild_seo', :on => :collection
     end
   end
-
 
   resources :team_members,            path: "management-team"
   resources :apprentice_pathways,     only: [:index, :show]
@@ -44,7 +41,8 @@ Heta::Application.routes.draw do
     chronicler_resources :footer_icons
     chronicler_resources :articles
     chronicler_resources :galleries
-
+    manticore_resources :home_promotions
+    manticore_resources :display_toggles
     manticore_resources :course_searches
     manticore_resources :courses
     manticore_resources :course_instances

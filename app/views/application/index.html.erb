@@ -1,3 +1,18 @@
+<%= content_for :head do %>
+  <script>
+  $(window).load(function() {
+    // http://stackoverflow.com/questions/6781031/use-jquery-css-to-find-the-tallest-of-all-elements
+    var maxHeight = -1;
+
+    $('.promo-divider').each(function() {
+      maxHeight = maxHeight > $(this).height() ? maxHeight : $(this).height();
+    });
+
+    $('.promo-divider').height(maxHeight + 5);
+  });
+  </script>
+<% end %>
+
 <div id="home">
   <% unless @banners.blank? %>
   <div id="home-banner">
@@ -56,6 +71,48 @@
       </div>
     <% end %>
   </section>
+
+  <% if @home_promotions.present? %>
+  <section>
+    <div id="home-promo">
+      <div class="title-area">
+        <div class="row">
+          <div class="large-12 columns home-promo-title-area">
+            <div class="heading-container">
+              <h1>Interested in an engineering apprenticeship?</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="clear"></div>
+    </div>
+
+    <div id="promos">
+      <div class="row">
+        <% @home_promotions.each_with_index do |promo, i| %>
+          <div class="large-3 columns left promo-divider">
+            <article>
+              <div class="row">
+                <div class="large-12 columns home-promo">
+                  <h2><%= link_to promo.title, promo.link %></h2>
+                  <%= raw promo.summary if promo.summary? %>
+                </div>
+              </div>
+              <div class="row">
+                <div class="large-12 columns home-promo-link">
+                  <%= link_to "View", promo.link %>
+                </div>
+              </div>
+            </article>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </section>
+  <% end %>
+
+
 
   <section>
     <div id="latest-news">
@@ -144,6 +201,49 @@
           </ul>
         </div>
       </div>
+
+
+
+    <% begin %>
+    <% cache "twitter_side", :expires_in => 600  do %>
+      <% tweet = Twitter.user_timeline("heta1967", count: 1)[0] %>
+      <div class="row">
+        <div class="large-10 columns large-offset-1 trade-courses-inner">
+          <h1>Latest <span>Tweet</span></h1>
+          <div class="twitter">
+            <p>
+              <% unless tweet.retweeted_status.blank? %>
+                <%= raw scan_for_links(tweet.retweeted_status.text) %>
+              <% else %>
+                <%= raw scan_for_links(tweet.text) %>
+              <% end %>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="large-10 columns large-offset-1 home-trade-course-navigation">
+          <div class="date">
+            <ul>
+
+              <li><%= link_to "#{ tweet.created_at.strftime('%H:%M - %d/%m/%Y')}", "https://www.twitter.com/#{tweet.user.screen_name}/statuses/#{tweet.id}", target: '_blank', class: 'time' %></li>
+
+            <% unless SITE_SETTINGS['Twitter'].blank? %>
+            <li>
+              <%= link_to "Follow us #{image_tag("twitter.png")}".html_safe, SITE_SETTINGS['Twitter'] %>
+            </li>
+            <% end %>
+          </ul>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+    <% rescue Twitter::Error => e %>
+      <% logger.error "Twitter broke due to: #{e}" %>
+    <% end %>
+
     </div>
   </section>
   <div id="apprentice-reveal" class="reveal-modal apprentice-modal">

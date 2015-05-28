@@ -234,6 +234,52 @@
 
 }
 
+#home-promo {
+  padding-top: 30px;
+  background-color:#89c235;
+  margin-top:5px;
+
+  .title-area {
+    float: left;
+    width: 100%;
+    height: 86px;
+    background-color: #ffffff;
+    text-align:center;
+
+    .heading-container {
+      background-color:#20676b;
+      border:3px solid #ffffff;
+      display:inline-block;
+      padding:10px 20px;
+      margin-top:30px;
+
+      -ms-transform: skew(-20deg); /* IE 9 */
+      -webkit-transform: skew(-20deg); /* Chrome, Safari, Opera */
+      transform: skew(-20deg);
+    }
+
+    .home-promo-title-area {
+      background-color:#89c235;
+      background-image:url('white_title_area_left.png'), url('white_title_area_right.png');
+      background-position:top left, top right;
+      background-repeat:no-repeat, no-repeat;
+      height:56px;
+    }
+
+    h1 {
+      margin:0 0;
+      text-transform: uppercase;
+      -ms-transform: skew(20deg); /* IE 9 */
+      -webkit-transform: skew(20deg); /* Chrome, Safari, Opera */
+      transform: skew(20deg);
+    }
+  }
+}
+
+#promos {
+  margin-top: 30px;
+}
+
 //---------------------------------------------
 //                News Section
 //---------------------------------------------
@@ -248,11 +294,19 @@
   padding-top:50px;
 }
 
+.promo-divider {
+  border-right:1px solid #b5e5e4;
+  padding-top:50px;
+  margin-bottom:50px;
+  position: relative;
+}
+
 .news-divider:last-child {
   border-right: none;
 }
 
-.home-news-link {
+.home-news-link,
+.home-promo-link {
   a:link {
     font-weight:bold;
     padding-right:10px;
@@ -264,6 +318,11 @@
     color:#20676b;
     background-image:url('link_triangle_dark_blue.png');
   }
+}
+
+.home-promo-link {
+  bottom: 0;
+  position: absolute;
 }
 
 .read-more-articles {
@@ -328,6 +387,16 @@
     height:40px;
   }
 
+  .home-trade-course-navigation a {
+    color:#ffffff;
+    font-weight: bold;
+    padding-right: 10px;
+    background-image: url("link_triangle_white.png");
+    background-repeat: no-repeat;
+    background-position: 100% 61%;
+  }
+
+
   ul {
     display:block;
     margin:0 auto;
@@ -336,14 +405,6 @@
       display:inline;
       padding:0 10px;
       line-height:40px;
-      a {
-        color:#ffffff;
-        font-weight: bold;
-        padding-right: 10px;
-        background-image: url("link_triangle_white.png");
-        background-repeat: no-repeat;
-        background-position: 100% 61%;
-      }
     }
   }
 }
