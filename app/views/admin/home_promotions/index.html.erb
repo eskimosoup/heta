@@ -1,0 +1,10 @@
+<% title HomePromotion.model_name.human.pluralize %>
+
+<div class="admin_functions">
+  <%= link_to "New #{ HomePromotion.model_name.human }", new_admin_home_promotion_path %>
+</div>
+
+<%= informant_table @home_promotions, {
+      :headings => [ '', 'Title', 'Link', 'Display', '', '' ],
+      :body => [ it_sort, :title, lambda{|x| link_to 'View', x.link if x }, it_ajax_toggle(:display), it_edit, it_destroy ]
+    } %>

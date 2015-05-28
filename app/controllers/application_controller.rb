@@ -33,6 +33,7 @@ class ApplicationController < ActionController::Base
     @apprentices         = Apprentice.where(:display => true).where(:highlight => true).order(:position)
     @articles            = Article.where("display = ? and date <= ?", true, Date.today).limit(4).order('date desc')
     @course_categories   = CourseCategory.all
+    @home_promotions     = HomePromotion.where(display: true).order(:position).limit(4)
 
     @current_branch = Willow::StaticPage.find_by_name('Home').branch
   end
