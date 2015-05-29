@@ -1,14 +1,14 @@
 module Admin
   class HomePromotionsController < Manticore::ApplicationController
-  
+
     def index
-      @home_promotions = HomePromotion.all
+      @home_promotions = HomePromotion.order(:position)
     end
-    
+
     def new
       @home_promotion = HomePromotion.new
     end
-    
+
     def create
       @home_promotion = HomePromotion.new(params[:home_promotion])
       if @home_promotion.save
@@ -21,7 +21,7 @@ module Admin
     def edit
       @home_promotion = HomePromotion.find(params[:id])
     end
-    
+
     def update
       @home_promotion = HomePromotion.find(params[:id])
       if @home_promotion.update_attributes(params[:home_promotion])
@@ -30,12 +30,12 @@ module Admin
         render :action => 'edit'
       end
     end
-    
+
     def destroy
       @home_promotion = HomePromotion.find(params[:id])
       @home_promotion.destroy
       redirect_to admin_home_promotions_path, :notice => "Home promotion destroyed."
     end
-    
+
   end
 end
