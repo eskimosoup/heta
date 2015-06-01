@@ -19,4 +19,6 @@
  *= require page
  *= require team_members
  *= require media_queries
+ *= require vendor/slick
+ *= require vendor/slick-theme
 */
