@@ -9,6 +9,15 @@
     });
 
     $('.promo-divider').height(maxHeight + 5);
+
+    $('.twitter').slick({
+      dots: true,
+      arrows: false,
+      infinite: true,
+      speed: 300,
+      autoplay: false,
+      autoplaySpeed: 2000,
+    });
   });
   </script>
 <% end %>
@@ -195,7 +204,7 @@
       </div>
       <div class="row">
         <div class="large-10 columns large-offset-1 home-trade-course-navigation">
-          <ul>
+          <ul class="footer-list">
             <li><%= link_to 'View Course Calendar', course_calendar_courses_path %></li>
             <li><%= link_to 'View Course Listing', courses_path %></li>
           </ul>
@@ -206,36 +215,46 @@
 
     <% begin %>
     <% cache "twitter_side", :expires_in => 600  do %>
-      <% tweet = Twitter.user_timeline("heta1967", count: 1)[0] %>
+      <% tweets = Twitter.user_timeline("heta1967", count: 5) %>
+
       <div class="row">
         <div class="large-10 columns large-offset-1 trade-courses-inner">
           <h1>Latest <span>Tweet</span></h1>
           <div class="twitter">
-            <p>
-              <% unless tweet.retweeted_status.blank? %>
-                <%= raw scan_for_links(tweet.retweeted_status.text) %>
-              <% else %>
-                <%= raw scan_for_links(tweet.text) %>
-              <% end %>
-            </p>
+            <% tweets.each do |tweet| %>
+                <div class="tweet">
+                  <p>
+                    <% unless tweet.retweeted_status.blank? %>
+                      <%= raw scan_for_links(tweet.retweeted_status.text) %>
+                    <% else %>
+                      <%= raw scan_for_links(tweet.text) %>
+                    <% end %>
+
+                    <% if tweet.media.present? %>
+                      <div>
+                        <%= image_tag(tweet.media[0]["media_url"], width: tweet.media[0]["sizes"][:thumb][:width]) %>
+                      </div>
+                    <% end %>
+
+                    <div class="date">
+                      <%= link_to "#{ tweet.created_at.strftime('%H:%M - %d/%m/%Y')}", "https://www.twitter.com/#{tweet.user.screen_name}/statuses/#{tweet.id}", target: '_blank', class: 'time' %>
+                    </div>
+                  </p>
+                </div>
+            <% end %>
           </div>
         </div>
       </div>
 
       <div class="row">
         <div class="large-10 columns large-offset-1 home-trade-course-navigation">
-          <div class="date">
-            <ul>
-
-              <li><%= link_to "#{ tweet.created_at.strftime('%H:%M - %d/%m/%Y')}", "https://www.twitter.com/#{tweet.user.screen_name}/statuses/#{tweet.id}", target: '_blank', class: 'time' %></li>
-
+          <ul class="footer-list">
             <% unless SITE_SETTINGS['Twitter'].blank? %>
             <li>
-              <%= link_to "Follow us #{image_tag("twitter.png")}".html_safe, SITE_SETTINGS['Twitter'] %>
+              <%= link_to "Follow us #{image_tag "twitter.png"}".html_safe, SITE_SETTINGS['Twitter'], target: '_blank' %>
             </li>
             <% end %>
           </ul>
-          </div>
         </div>
       </div>
     <% end %>
