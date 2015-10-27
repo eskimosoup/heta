@@ -25,7 +25,7 @@
         </div>
         <div class="large-10 columns course-container">
           <% if course.course_instances.present? %>
-            <h2><%= link_to course.name, course.course_instances.first %></h2>
+            <h2><%= link_to course.name, course.course_instances.where(display: true).first %></h2>
           <% else %>
             <h2><%= link_to course.name, course %></h2>
           <% end %>
@@ -34,18 +34,24 @@
           <% unless course.course_instances.blank? %>
             <div class="instance-dates">
               Current Dates:
-              <% course.course_instances.each do |instance| %>
+              <% course.course_instances.where(display: true).each do |instance| %>
                 <span><%= link_to (l instance.start_date), instance %></span>
               <% end %>
             </div>
           <% end %>
-          <%= link_to "View details", course, :class => "read-more" %>
+
+          <% if course.course_instances.present? %>
+            <%= link_to "View details", course.course_instances.where(display: true).first, :class => "read-more" %>
+          <% else %>
+            <%= link_to "View details", course, :class => "read-more" %>
+          <% end %>
+
         </div>
       <% end %>
-      
+
      <!--
       <div class="large-12 columns"><h1>Bookable Courses</h1></div>
-     
+
       <% @bookable_courses.each do |course| %>
         <div class="large-2 columns course-date">
 
