@@ -7,6 +7,6 @@
 <% end %>
 
 <%= informant_table @display_toggles, {
-      :headings => [ 'Name', 'Display', '', '' ],
-      :body => [ :name, it_ajax_toggle(:display), it_edit, it_destroy ]
+      :headings => [ 'Name', 'URL', 'Display', '', '' ],
+      :body => [ :name, :url, it_ajax_toggle(:display), it_edit, it_destroy ]
     } %>
