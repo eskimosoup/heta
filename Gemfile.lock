@@ -1,19 +1,25 @@
-PATH
-  remote: ../../rails_3/chronicler
+GIT
+  remote: git@github.com:eskimosoup/chronicler.git
+  revision: 3182b1e017f74c6ef733991cfe7232b6b5a1d69a
+  branch: rails_3
   specs:
     chronicler (0.3.7)
       carrierwave
       mini_magick
       rails
 
-PATH
-  remote: ../../rails_3/informant
+GIT
+  remote: git@github.com:eskimosoup/informant.git
+  revision: 81b3e33e2e40da35acaa5a087d6cd0b217769ac9
+  branch: rails_3
   specs:
     informant (0.1.4)
       rails
 
-PATH
-  remote: ../../rails_3/manticore
+GIT
+  remote: git@github.com:eskimosoup/manticore.git
+  revision: 5ca719b6617af596040cde9a166e3f3b94ae23b2
+  branch: rails_3
   specs:
     manticore (0.2.2)
       cancancan
@@ -32,8 +38,10 @@ PATH
       uglifier
       willow
 
-PATH
-  remote: ../../rails_3/willow
+GIT
+  remote: git@github.com:eskimosoup/willow.git
+  revision: 8f21ce8f247f4a3572a3fef5b419bdd53fb77b97
+  branch: rails_3
   specs:
     willow (1.0.0)
       ancestry
@@ -74,7 +82,7 @@ GEM
     arel (3.0.3)
     bcrypt-ruby (3.0.1)
     builder (3.0.4)
-    cancancan (1.10.1)
+    cancancan (1.12.0)
     carrierwave (0.10.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
@@ -111,7 +119,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25.1)
-    mini_magick (4.2.5)
+    mini_magick (4.3.6)
     multi_json (1.10.1)
     multipart-post (2.0.0)
     mysql2 (0.3.17)
@@ -158,7 +166,7 @@ GEM
       ref
     thor (0.19.1)
     tilt (1.4.1)
-    tinymce-rails (4.1.6)
+    tinymce-rails (4.2.7)
       railties (>= 3.1.1)
     treetop (1.4.15)
       polyglot
@@ -179,6 +187,7 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
+  cancancan (= 1.12)
   chronicler!
   coffee-rails (~> 3.2.2)
   friendly_id (~> 4.0.9)
