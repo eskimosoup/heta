@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150528121640) do
+ActiveRecord::Schema.define(:version => 20151109093935) do
 
   create_table "apprentice_pathways", :force => true do |t|
     t.string   "title"
@@ -156,6 +156,7 @@ ActiveRecord::Schema.define(:version => 20150528121640) do
     t.boolean  "display"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "url",        :null => false
   end
 
   create_table "footer_icons", :force => true do |t|

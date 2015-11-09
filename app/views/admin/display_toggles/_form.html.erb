@@ -3,21 +3,26 @@
   <%= f.error_messages %>
 
   <%= field_set_tag 'Basic' do -%>
-    
+
     <div class="field">
       <%= f.label :name %><br />
       <%= f.text_field :name %>
     </div>
-    
+
+    <div class="field">
+      <%= f.label :url %>
+      <%= f.url_field, :url %>
+    </div>
+
     <div class="field">
       <%= f.label :display %><br />
       <%= f.check_box :display %>
     </div>
-    
+
   <% end -%>
-  
+
   <div class="actions">
     <%= f.submit %>
   </div>
-  
-<% end %>					
+
+<% end %>

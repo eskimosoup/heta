@@ -1,3 +1,3 @@
 class DisplayToggle < ActiveRecord::Base
-  attr_accessible :display, :name
+  validates :name, :url, presence: true
 end

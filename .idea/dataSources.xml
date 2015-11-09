@@ -5,10 +5,6 @@
       <driver-ref>mysql</driver-ref>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://127.0.0.1/school_wellbeing_production</jdbc-url>
-      <user-name>school</user-name>
-      <user-password>dfcedfc6df99df89dfdadf99dfeedfdd</user-password>
-      <libraries />
     </data-source>
   </component>
 </project>
-
