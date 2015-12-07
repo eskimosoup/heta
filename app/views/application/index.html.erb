@@ -62,23 +62,25 @@
 
     <div class="clear"></div>
 
-    <% @companies.each_slice(8).with_index do |slice, i| %>
+    <div data-orbit>
+      <% @companies.each_slice(8).with_index do |slice, i| %>
+        <div>
+          <div class="row home-company-row <% if i > 0 %>mobile-remove-margin<% end %>">
+            <ul class="large-block-grid-8 small-block-grid-4">
+              <% slice.each do |company| %>
+                <li>
+                  <%= link_to image_tag(company.image.thumb), company, :class => "cordion-button" %>
+                  <div class="accordion-content">
+                  herp
+                  </div>
+                </li>
 
-      <div class="row home-company-row <% if i > 0 %>mobile-remove-margin<% end %>">
-        <ul class="large-block-grid-8 small-block-grid-4">
-          <% slice.each do |company| %>
-            <li>
-              <%= link_to image_tag(company.image.thumb), company, :class => "cordion-button" %>
-              <div class="accordion-content">
-              herp
-              </div>
-            </li>
-
-          <% end %>
-        </ul>
-
-      </div>
-    <% end %>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </section>
 
   <% if @home_promotions.present? %>
@@ -205,7 +207,7 @@
       <div class="row">
         <div class="large-10 columns large-offset-1 home-trade-course-navigation">
           <ul class="footer-list">
-            <li><%= link_to 'View Course Calendar', course_calendar_courses_path %></li>
+            <!-- <li><%#= link_to 'View Course Calendar', course_calendar_courses_path %></li> --->
             <li><%= link_to 'View Course Listing', courses_path %></li>
           </ul>
         </div>
