@@ -17,7 +17,7 @@
     <% @navigation.each_with_index do |branch, i| %>
       <li>
         <% if branch.children? %>
-          <%= link_to branch.name, "##{i}", :class => (@current_branch and @current_branch == branch ? "children active" : "children") %>
+          <%= link_to branch.name, "##{i}", :class => "children #{'active' if @current_branch and @current_branch == branch}" %>
           <div class="mobile-nav-children-arrow"><%= image_tag 'nav_arrow.png', alt: "" %></div>
             <ul class="mobile_children_nav closed" id="<%= i %>">
               <li><%= link_to branch.name, branch.destination %></li>
