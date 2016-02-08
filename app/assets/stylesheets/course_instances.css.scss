@@ -123,3 +123,26 @@ h3 {
     margin-top:13px;
   }
 }
+
+.course-bookings {
+  padding-top: 50px;
+}
+
+.course-booking-button {
+  background: #89c235;
+  border-left: 5px solid #20676b;
+  color: #fff;
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  padding: 8px;
+  margin: 8px 0;
+
+  &:link,
+  &:visited,
+  &:hover,
+  &:active, {
+    color: #fff;
+  }
+}
