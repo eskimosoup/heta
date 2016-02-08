@@ -13,26 +13,31 @@
       <%= f.label "Location" %><br />
       <%= f.select :training_location_id, TrainingLocation.all.map{|x| [x.name, x.id]} %>
     </div>
-    
+
+    <div class="field">
+      <%= f.label :eventbrite_link %><br />
+      <%= f.text_field :eventbrite_link %>
+    </div>
+
     <div class="field">
       <%= f.label :start_date %><br />
       <%= f.date_select :start_date %>
     </div>
-    
+
     <div class="field">
       <%= f.label :end_date %><br />
       <%= f.date_select :end_date %>
     </div>
-    
+
     <div class="field">
       <%= f.label :display %><br />
       <%= f.check_box :display %>
     </div>
-    
+
   <% end -%>
-  
+
   <div class="actions">
     <%= f.submit %>
   </div>
-  
-<% end %>					
+
+<% end %>

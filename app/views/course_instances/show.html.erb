@@ -20,12 +20,56 @@
 
 <div id="course-instance">
   <div class="row">
-    <div class="large-9 columns course-show">
+    <div class="large-6 columns course-show">
       <h2>Summary</h2>
       <%= @course_instance.course.summary %><br/><br/>
       <hr/>
       <h2>Content</h2>
       <%= raw @course_instance.course.content %>
+    </div>
+
+    <div class="large-3 columns">
+      <div class="course-info-container course-bookings">
+        <h3>Date:</h3>
+        Start Date: <%= l @course_instance.start_date %><br/>
+        End Date: <%= l @course_instance.end_date %><br/>
+        Length: <%= @course_instance.course.length %>
+
+        <hr/>
+
+        <h3>Prices:</h3>
+        <% unless @course_instance.course.individual_price.blank? %>
+          Individual Price:  <%= (number_to_currency @course_instance.course.individual_price).gsub(".00", "") %><br/>
+        <% end %>
+
+        <% unless @course_instance.course.min_place.blank? %>
+          Min Places: <%= @course_instance.course.min_place %><br/>
+        <% end %>
+
+        <% unless @course_instance.course.max_place.blank? %>
+          Max Places: <%= @course_instance.course.max_place %><br/>
+        <% end %>
+
+        <% unless  @course_instance.course.group_price.blank? %>
+          Group Price: <%= (number_to_currency @course_instance.course.group_price).gsub(".00", "") %><br/>
+        <% end %>
+
+        <% unless @course_instance.course.min_group_number.blank? %>
+          Min Group Places: <%= @course_instance.course.min_group_number %><br/>
+        <% end %>
+
+        <% unless @course_instance.course.max_group_number.blank? %>
+          Max Group Places: <%= @course_instance.course.max_group_number %><br/>
+        <% end %>
+
+        <%= link_to 'Book now', @course_instance.eventbrite_link, class: 'course-booking-button', target: '_blank' if @course_instance.eventbrite_link.present? %>
+        <%= link_to 'Enquire now',
+            new_contact_path(
+            form_type: 'course_instance_enquiry',
+            subject: "I have an enquiry regarding: #{@course_instance.course.name} (#{l @course_instance.start_date} - #{l @course_instance.end_date})"
+            ),
+            class: 'course-booking-button', target: '_blank' if @course_instance.eventbrite_link.blank? %>
+      </div>
     </div>
 
     <div id="side-panel" class="large-3 columns">
@@ -37,9 +81,9 @@
           <% end %>
         </ul>
 
+        <hr />
+
         <h3>Course Location</h3>
-
-
         <div id="map" style='width: 100%; height: 300px;'></div>
 
         <script type="text/javascript">
@@ -59,41 +103,6 @@
             ]);
           });
         </script>
-
-
-        <h3>Date:</h3>
-        Start Date: <%= l @course_instance.start_date %><br/>
-        End Date: <%= l @course_instance.end_date %><br/>
-        Length: <%= @course_instance.course.length %>
-
-        <hr/>
-
-        <h3>Prices:</h3>
-        <% unless @course_instance.course.individual_price.blank? %>
-          Individual Price:  <%= (number_to_currency @course_instance.course.individual_price).gsub(".00", "") %><br/>
-        <% end %>
-        
-        <% unless @course_instance.course.min_place.blank? %>
-          Min Places: <%= @course_instance.course.min_place %><br/>
-        <% end %>
-        
-        <% unless @course_instance.course.max_place.blank? %>
-          Max Places: <%= @course_instance.course.max_place %><br/>
-        <% end %>
-        
-        <% unless  @course_instance.course.group_price.blank? %>
-          Group Price: <%= (number_to_currency @course_instance.course.group_price).gsub(".00", "") %><br/>
-        <% end %>
-      
-        <% unless @course_instance.course.min_group_number.blank? %>
-          Min Group Places: <%= @course_instance.course.min_group_number %><br/>
-        <% end %>
-        
-        <% unless @course_instance.course.max_group_number.blank? %>
-          Max Group Places: <%= @course_instance.course.max_group_number %><br/>
-        <% end %>
-
-        <hr/>
       </div>
     </div>
 

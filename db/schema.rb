@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20151109093935) do
+ActiveRecord::Schema.define(:version => 20160208132249) do
 
   create_table "apprentice_pathways", :force => true do |t|
     t.string   "title"
@@ -117,6 +117,7 @@ ActiveRecord::Schema.define(:version => 20151109093935) do
     t.datetime "updated_at",                             :null => false
     t.integer  "training_location_id"
     t.string   "slug"
+    t.string   "eventbrite_link"
   end
 
   add_index "course_instances", ["slug"], :name => "index_course_instances_on_slug"

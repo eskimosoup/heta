@@ -39,10 +39,10 @@
 
     <div class="field">
       <%= f.label :subject, raw("Subject *") %><br />
-      <%= f.text_field :subject, :placeholder => "Your reason for contacting us" %>
+      <%= f.text_field :subject, :placeholder => "Your reason for contacting us", value: (params[:subject] || @contact.subject)  %>
     </div>
-    
-    
+
+
     <div class="field">
       <%= f.label :area, raw("Site  *") %><br />
       <%= f.select :area, ['Hull', 'Stallingborough', 'Scunthorpe'] %>
@@ -58,6 +58,7 @@
 
 
     <div class="actions">
+      <%= f.hidden_field :form_type, value: (params[:form_type] || @contact.form_type || 'Contact form') %>
       <%= f.submit "Submit" %>
     </div>
   </div>
