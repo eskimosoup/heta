@@ -77,7 +77,15 @@
         <h3>Course Dates</h3>
         <ul class="course-instances">
           <% @course_instances.each do |instance| %>
-            <li><%= link_to l(instance.start_date), instance %></li>
+            <li>
+              <%= link_to instance do %>
+                <%= l(instance.start_date) %>
+                <div class="course-instance-address">
+                  <%= instance.training_location.name %>,
+                  <%= instance.training_location.address %>
+                </div>
+              <% end %>
+            </li>
           <% end %>
         </ul>
 
