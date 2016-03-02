@@ -13,12 +13,18 @@
       <br />
       <%= mail_to(@contact.email) %>
     </p>
+
+    <p>
+      <strong>Phone:</strong>
+      <br />
+      <%= @contact.phone_number %>
+    </p>
     
     <p>
       <strong>Subject:</strong>
       <br />
       <%= @contact.subject %>
-    </p>    
+    </p>
     
     <p>
       <strong>Site:</strong>
