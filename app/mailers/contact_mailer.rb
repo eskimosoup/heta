@@ -6,7 +6,7 @@ class ContactMailer < ActionMailer::Base
     @contact = contact
     case @contact.form_type
     when 'course_instance_enquiry'
-      mail to: SITE_SETTINGS['Course Instance Enquiry'], subject: @contact.subject
+      mail to: SITE_SETTINGS['Course Instance Enquiry'], cc: "james.mcIntosh@heta.co.uk", subject: @contact.subject
     else
       mail to: SITE_SETTINGS["Email"], subject: "Contact form completed - #{SITE_SETTINGS['Name']}"
     end

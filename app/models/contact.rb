@@ -4,9 +4,9 @@ class Contact
 	include ActiveModel::Conversion
   extend  ActiveModel::Naming
 
-  attr_accessor :email, :message, :firstname, :lastname, :subject, :area, :form_type
+  attr_accessor :email, :message, :firstname, :lastname, :phone_number, :subject, :area, :form_type
 
-  validates :firstname, :lastname, :email, :subject, :message, {:presence => true}
+  validates :firstname, :lastname, :email, :subject, :phone_number, :message, {:presence => true}
 
   def initialize(attributes = {})
     attributes.each do |name, value|
