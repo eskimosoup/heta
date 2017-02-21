@@ -4,6 +4,8 @@
 
 </div>
 
+<%= link_to @apply_now.name, @apply_now.url, target: '_blank', class: 'apply-now hide-for-medium-up' unless @apply_now.blank? %>
+
 <ul class="mobile-menu-list hidden hide-for-medium-up">
   <div id="header-search-social">
   <%= form_tag courses_path, :id => "search-form-mobile mobile-search", :method => 'get' do %>
