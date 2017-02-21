@@ -78,6 +78,11 @@
 
   .apply-now-wrap {
     margin-top: 43px;
+    width: 58%;
+
+    @media screen and (max-width: 1003px) {
+      width: 54%;
+    }
   }
 
   .apply-now {
@@ -91,6 +96,10 @@
 
     &:hover {
       background: #ef792b;
+    }
+
+    &.hide-for-medium-up {
+      width: calc(100% - 70px);
     }
   }
 }
